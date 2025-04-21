@@ -1,0 +1,952 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Mobile Specifics -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Title -->
+<title>BIDS Tutorial Series: Introductory Walkthrough | Stanford Center for Reproducible Neuroscience</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="wp-content/uploads/2015/06/favicon.png" />
+
+<!-- Apple Touch Icons -->    
+
+<!-- RSS & Pingbacks -->
+<link rel="alternate" type="application/rss+xml" title="Stanford Center for Reproducible Neuroscience RSS Feed" href="feed/index.html" />
+<link rel="pingback" href="https://reproducibility.stanford.edu/xmlrpc.php" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
+
+<!-- Google Font for Revolution Slider -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='https://maps.google.com/' />
+<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+<link rel="alternate" type="application/rss+xml" title="Stanford Center for Reproducible Neuroscience &raquo; Feed" href="feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Stanford Center for Reproducible Neuroscience &raquo; Comments Feed" href="comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Stanford Center for Reproducible Neuroscience &raquo; BIDS Tutorial Series: Introductory Walkthrough Comments Feed" href="bids-tutorial-series-part-1a/feed/index.html" />
+		<!-- This site uses the Google Analytics by ExactMetrics plugin v8.3.1 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+		<!-- Note: ExactMetrics is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the ExactMetrics settings panel. -->
+					<!-- No tracking code set -->
+				<!-- / Google Analytics by ExactMetrics -->
+		<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/reproducibility.stanford.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.7.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='wp-includes/css/dist/block-library/style.min.css@ver=6.7.1.css' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='wp-content/plugins/contact-form-7/includes/css/styles.css@ver=4.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='wp-content/plugins/revslider/rs-plugin/css/settings.css@ver=4.6.3.css' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
+</style>
+<link rel='stylesheet' id='wpsm_team_b-font-awesome-front-css' href='wp-content/plugins/team-builder/assets/css/font-awesome/css/font-awesome.min.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsm_team_b_bootstrap-front-css' href='wp-content/plugins/team-builder/assets/css/bootstrap-front.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsm_team_b_team-css' href='wp-content/plugins/team-builder/assets/css/team.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsm_team_b_owl_carousel_min_css-css' href='wp-content/plugins/team-builder/assets/css/owl.carousel.min.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css' href='wp-content/themes/flex/framework/assets/fonts/fontawesome/font-awesome.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lineicons-css' href='wp-content/themes/flex/framework/assets/fonts/lineicons/lineicons.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='typicons-css' href='wp-content/themes/flex/framework/assets/fonts/typicons/typicons.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='entypo-css' href='wp-content/themes/flex/framework/assets/fonts/entypo/entypo.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css' href='wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/owl-carousel/owl.carousel.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-fancybox-css' href='wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/fancybox/jquery.fancybox.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css' href='wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/css/animate.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flex-css' href='wp-content/themes/flex_child/style.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flex-generate-css' href='wp-content/themes/flex/assets/css/css-generate.php@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flex-custom-css' href='wp-content/themes/flex/assets/css/custom.css@ver=6.7.1.css' type='text/css' media='all' />
+<style id='akismet-widget-style-inline-css' type='text/css'>
+
+			.a-stats {
+				--akismet-color-mid-green: #357b49;
+				--akismet-color-white: #fff;
+				--akismet-color-light-grey: #f6f7f7;
+
+				max-width: 350px;
+				width: auto;
+			}
+
+			.a-stats * {
+				all: unset;
+				box-sizing: border-box;
+			}
+
+			.a-stats strong {
+				font-weight: 600;
+			}
+
+			.a-stats a.a-stats__link,
+			.a-stats a.a-stats__link:visited,
+			.a-stats a.a-stats__link:active {
+				background: var(--akismet-color-mid-green);
+				border: none;
+				box-shadow: none;
+				border-radius: 8px;
+				color: var(--akismet-color-white);
+				cursor: pointer;
+				display: block;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+				font-weight: 500;
+				padding: 12px;
+				text-align: center;
+				text-decoration: none;
+				transition: all 0.2s ease;
+			}
+
+			/* Extra specificity to deal with TwentyTwentyOne focus style */
+			.widget .a-stats a.a-stats__link:focus {
+				background: var(--akismet-color-mid-green);
+				color: var(--akismet-color-white);
+				text-decoration: none;
+			}
+
+			.a-stats a.a-stats__link:hover {
+				filter: brightness(110%);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 2px rgba(0, 0, 0, 0.16);
+			}
+
+			.a-stats .count {
+				color: var(--akismet-color-white);
+				display: block;
+				font-size: 1.5em;
+				line-height: 1.4;
+				padding: 0 13px;
+				white-space: nowrap;
+			}
+		
+</style>
+<link rel='stylesheet' id='redux-google-fonts-flex-css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600%2C700%7CCabin%3A700&#038;subset=latin&#038;ver=1594231710' type='text/css' media='all' />
+<script type="text/javascript" src="wp-includes/js/jquery/jquery.min.js@ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="wp-includes/js/jquery/jquery-migrate.min.js@ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min.js@ver=4.6.3" id="tp-tools-js"></script>
+<script type="text/javascript" src="wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js@ver=4.6.3" id="revmin-js"></script>
+<script type="text/javascript" src="wp-content/plugins/team-builder/assets/js/owl.carousel.min.js@ver=6.7.1" id="wpsm_team_b_owl_carousel_min_js-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/md-shortcodes.js@ver=1" id="md-shortcodes-js"></script>
+<link rel="https://api.w.org/" href="wp-json/index.html" /><link rel="alternate" title="JSON" type="application/json" href="wp-json/wp/v2/posts/335" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php@rsd" />
+<meta name="generator" content="WordPress 6.7.1" />
+<link rel="canonical" href="index.html@p=335.html" />
+<link rel='shortlink' href='index.html@p=335.html' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="wp-json/oembed/1.0/embed@url=https%253A%252F%252Freproducibility.stanford.edu%252Fbids-tutorial-series-part-1a%252F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="wp-json/oembed/1.0/embed@url=https%253A%252F%252Freproducibility.stanford.edu%252Fbids-tutorial-series-part-1a%252F&amp;format=xml" />
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				// CUSTOM AJAX CONTENT LOADING FUNCTION
+				var ajaxRevslider = function(obj) {
+				
+					// obj.type : Post Type
+					// obj.id : ID of Content to Load
+					// obj.aspectratio : The Aspect Ratio of the Container / Media
+					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
+					
+					var content = "<h2>THIS IS SOME TITLE</h2><br/>";
+
+					content += "Type:"+obj.type+"</br>";
+					content += "ID:"+obj.id+"</br>";        
+					content += "Aspect Ratio:"+obj.aspectratio+"</br>";  
+					
+					data = {};
+					
+					data.action = 'revslider_ajax_call_front';
+					data.client_action = 'get_slider_html';
+					data.token = '4b6a8dde7f';
+					data.type = obj.type;
+					data.id = obj.id;
+					data.aspectratio = obj.aspectratio;
+					
+					// SYNC AJAX REQUEST
+					jQuery.ajax({
+						type:"post",
+						url:"https://reproducibility.stanford.edu/wp-admin/admin-ajax.php",
+						dataType: 'json',
+						data:data,
+						async:false,
+						success: function(ret, textStatus, XMLHttpRequest) {
+							if(ret.success == true)
+								content = ret.data;								
+						},
+						error: function(e) {
+							console.log(e);
+						}
+					});
+					
+					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
+					 return content;						 
+				};
+				
+				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
+				var ajaxRemoveRevslider = function(obj) {
+					return jQuery(obj.selector+" .rev_slider").revkill();
+				}
+
+				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
+				var extendessential = setInterval(function() {
+					if (jQuery.fn.tpessential != undefined) {
+						clearInterval(extendessential);
+						if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined')
+							jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3});   
+							// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
+							// func: the Function Name which is Called once the Item with the Post Type has been clicked
+							// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
+							// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
+					}
+				},30);
+			});
+		</script>
+		<script type="text/javascript">
+	window._se_plugin_version = '8.1.9';
+</script>
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135646623-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135646623-1');
+</script>
+
+ 
+</head>
+<body class="post-template-default single single-post postid-335 single-format-standard css3-animations-enabled device-desktop md-page-builder" style="background-color:#f5f5f5;background-image:url();">
+	
+<div id="wrap" class="full-width border-4">
+
+	<header class="width-fixed height-80 attachment-fixed border-4 scroll-resize ">
+		
+		
+
+
+		<div class="header-content" id="header-content">		
+			<div class="container">
+				<div id="logo">
+					<a href="index.html" title="Stanford Center for Reproducible Neuroscience">
+						<img src="wp-content/uploads/2020/07/CRN-2020.png" alt="" />						
+					</a>
+				</div>
+
+				<nav class="header-menu menu-style- menu-uppercase-yes submenu-">
+					<ul id="header-menu" class="menu"><li class="menu-item-23 menu-item menu-item-type-post_type menu-item-object-page menu-item-home simple"><a title="Home Page" href="index.html">Home</a></li>
+<li class="menu-item-195 menu-item menu-item-type-post_type menu-item-object-page simple"><a href="index.html@p=28.html">About the Center</a></li>
+<li class="menu-item-44 menu-item menu-item-type-post_type menu-item-object-page simple"><a href="index.html@p=42.html">Who We Are</a></li>
+<li class="menu-item-52 menu-item menu-item-type-post_type menu-item-object-page simple"><a href="index.html@p=51.html">Resources</a></li>
+<li class="menu-item-34 menu-item menu-item-type-post_type menu-item-object-page current_page_parent simple"><a href="blog/index.html">Blog</a></li>
+<li class="menu-item-239 menu-item menu-item-type-post_type menu-item-object-page simple"><a href="index.html@p=235.html">The OHBM Replication Award</a></li>
+</ul>				</nav>
+
+								
+				<a href="index.html@p=335.html#" id="search-open"><i class="entypo-search"></i></a>
+
+<div class="header-search">
+	<form method="get" action="index.html">
+		<fieldset>
+			<input type="text" name="s" value="" placeholder="To search type and press enter..." />
+	    </fieldset>
+	</form>
+	<a href="index.html@p=335.html#" id="search-close"><i class="entypo-cancel"></i></a>
+</div>
+
+				<a href="index.html@p=335.html#" id="menu-mobile-trigger"></a>
+			</div>
+		</div>
+
+		<div class="header-mobile">
+			<div class="container">
+				
+
+				<nav class="header-menu-mobile">
+					<ul id="header-menu-mobile" class="menu"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-23"><a href="index.html" title="Home Page">Home</a></li>
+<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="index.html@p=28.html">About the Center</a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="index.html@p=42.html">Who We Are</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="index.html@p=51.html">Resources</a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-34"><a href="blog/index.html">Blog</a></li>
+<li id="menu-item-239" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-239"><a href="index.html@p=235.html">The OHBM Replication Award</a></li>
+</ul>				</nav>
+
+
+			</div>
+		</div>
+	</header>
+
+
+	<div class="page-content" id="post-container">
+		<div class="container">
+		<div class="row"><div class="col-md-9 col-md-left col-sm-left content-full"><div class="md-blog">
+	<article id="post-335" class="single-post post-335 post type-post status-publish format-standard hentry category-blog">
+		
+
+<div class="post-body">
+	
+	<h2 class="post-title">BIDS Tutorial Series: Introductory Walkthrough</h2>
+	
+	
+<div class="post-header">
+		<span class="meta-date">
+		<i class="icon-calendar"></i> February 22, 2018</span>
+	</span>
+		
+	
+	
+	
+	</div>
+
+
+	<div class="post-content"><p style="text-align: left;"><b>Introduction</b></p>
+<p><span style="font-weight: 400;">Welcome to part 1A of the tutorial series “Getting Started with BIDS”. The tutorial series will introduce you to converting brain data into the BIDS organizational standard, provide an example of how to convert a dataset into BIDS (manually and an automated solution), and examine different off-the-shelf automated solutions. This tutorial will show a detailed step-by-step organizational guide to convert DICOMs into a BIDS validated dataset. The step-by-step guide will iteratively add one modality at a time until the full dataset is organized and validated. Even though performing the conversion manually is not expected we show it here for educational purposes. An automated solution is strongly recommended. An automated custom solution is discussed in the <a href="bids-tutorial-series-part-1b/index.html">next part of the tutorial series</a>. Throughout this tutorial series portion, we will be using DICOMs from the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/FrontPage.html">Nathan Kline Institute (NKI) Rockland Sample &#8211; Multiband Imaging Test-Retest Pilot Dataset</a>. We will be following the specifications described in the <a href="https://github.com/bids-standard/bids-website/blob/gh-pages/old_website/bids_spec1.0.2.pdf">BIDS Specification version 1.0.2</a></span><span style="font-weight: 400;">. The next parts of this tutorial series will examine an automated custom solution and off-the-shelf solutions to consider using to convert your dataset into the BIDS standard. </span></p>
+<p>For surfacing questions, we please ask if you may direct them to <a href="https://neurostars.org/tag/bids">NeuroStars</a> with the “bids” tag. NeuroStars is an active platform with many BIDS experts.</p>
+<p><span style="font-weight: 400;">Table of Contents<br />
+A. <a href="index.html@p=335.html#man">Manual conversion</a></span></p>
+<ol>
+<li><a href="index.html@p=335.html#man1">Download data</a></li>
+<li><a href="index.html@p=335.html#man2">Folder creation</a></li>
+<li><a href="index.html@p=335.html#man3">Dataset_description file</a></li>
+<li><a href="index.html@p=335.html#man4">Download MRIcroGL</a></li>
+<li><a href="index.html@p=335.html#man5">Create anatomical folders and convert dicoms</a></li>
+<li><a href="index.html@p=335.html#man6">Rename anatomical files</a></li>
+<li><a href="index.html@p=335.html#man7">Organize anatomical files and validate</a></li>
+<li><a href="index.html@p=335.html#man8">Create diffusion folders and convert dicoms</a></li>
+<li><a href="index.html@p=335.html#man9">Rename diffusion files</a></li>
+<li><a href="index.html@p=335.html#man10">Organize diffusion files and validate</a></li>
+<li><a href="index.html@p=335.html#man11">Create functional folders and convert dicoms</a></li>
+<li><a href="index.html@p=335.html#man12">Rename and organize functional files</a></li>
+<li><a href="index.html@p=335.html#man13">Task event tsv files</a></li>
+<li><a href="index.html@p=335.html#man14">Fix errors</a></li>
+<li><a href="index.html@p=335.html#man15">Add participant and check warnings</a></li>
+</ol>
+<p><a id="man"></a><span style="font-weight: 500;"><strong>1A. Manual conversion of DICOM images to BIDS</strong></span></p>
+<p><strong><a id="man1"></a>Step 1.</strong> To begin, please navigate to the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/FrontPage.html">NKI-RS Multiband Imaging Test-Retest Pilot Dataset</a> and scroll down to the bottom of the page to download the DICOM images for participants 2475376 and 3893245.</p>
+<p><strong>Note</strong>: If you are having problems downloading this dataset, there is a <a href="https://github.com/bids-standard/bids-starter-kit/wiki/Tutorials-FAQ">tutorial</a> illustrating how to download the data and a <a href="https://neurostars.org/t/nki-rs-multiband-imaging-test-retest-pilot-dataset-access/4655">NeuroStars thread</a>.</p>
+<p><strong><a href="wp-content/uploads/2018/02/NKI_website_startingpoint-1.png"><img fetchpriority="high" decoding="async" class=" wp-image-367 aligncenter" src="wp-content/uploads/2018/02/NKI_website_startingpoint-1.png" alt="NKI_website_startingpoint" width="470" height="261" /></a></strong></p>
+<p><a href="wp-content/uploads/2018/02/NKI-dicom-download-ARROW.jpg"><img decoding="async" class="wp-image-431 alignleft" src="wp-content/uploads/2018/02/NKI-dicom-download-ARROW.jpg" alt="NKI dicom download-ARROW" width="431" height="206" /></a></p>
+<p><a href="wp-content/uploads/2018/02/NKI-Download-2-sample-subjects.png"><img decoding="async" class="wp-image-459 alignnone" src="wp-content/uploads/2018/02/NKI-Download-2-sample-subjects.png" alt="NKI Download 2 sample subjects" width="173" height="253" /></a></p>
+<p><span style="font-weight: 400;"><a id="man2"></a><strong>Step 2.</strong> Once the DICOMs are downloaded, please create a folder with what the dataset is called and create a Dicom directory within this. In this case, our dataset is called BIDS_NKI_walkthrough. Then put the participant folders containing the DICOMs into that folder. The folder structure can be seen below.</span></p>
+<p><span style="font-weight: 400;"><a href="wp-content/uploads/2018/02/Man-Dicom-create.png"><img loading="lazy" decoding="async" class=" wp-image-448 aligncenter" src="wp-content/uploads/2018/02/Man-Dicom-create.png" alt="Man Dicom create" width="453" height="98" /></a></span><a href="wp-content/uploads/2018/02/Man-Dicom-with-both-subjs.png"><img loading="lazy" decoding="async" class="wp-image-447 aligncenter" src="wp-content/uploads/2018/02/Man-Dicom-with-both-subjs.png" alt="Man Dicom with both subjs" width="458" height="369" /></a></p>
+<p>Now, create a Nifti folder at the same level as the Dicom folder, pictured below.</p>
+<p><a href="wp-content/uploads/2018/02/Man-create-Nifti-folder.png"><img loading="lazy" decoding="async" class=" wp-image-446 aligncenter" src="wp-content/uploads/2018/02/Man-create-Nifti-folder.png" alt="Man create Nifti folder" width="477" height="121" /></a></p>
+<p><span style="font-weight: 400;"><a id="man3"></a><strong>Step 3.</strong> Then we need to create the <a href="https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#dataset_descriptionjson">dataset_description.json</a> file. There is an <a href="https://jsoneditoronline.org/">online json editor</a> that can help create this file. Once the json file is written, one can save -&gt; save to disk. Then move this file to within the Nifti folder. The dataset_description.json file only needs to be made once. At this time, it is optional to add a <a href="https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#participants-file">participant file</a>, <a href="https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#readme">README</a>, or <a href="https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#changes">CHANGES</a>. Learn more about <a href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#keyvalue-files-dictionaries">json files</a>. </span></p>
+<p><span style="font-weight: 400;"><a href="wp-content/uploads/2018/02/json-online-editor-with-completed-dataset-json.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-369" src="wp-content/uploads/2018/02/json-online-editor-with-completed-dataset-json.png" alt="json online editor with completed dataset json" width="691" height="173" /></a></span></p>
+<p><a href="wp-content/uploads/2018/02/Man-datasetdescrip-in-Nifti.png"><img loading="lazy" decoding="async" class=" wp-image-445 aligncenter" src="wp-content/uploads/2018/02/Man-datasetdescrip-in-Nifti.png" alt="Man datasetdescrip in Nifti" width="410" height="117" /></a></p>
+<p><span style="font-weight: 400;"><a id="man4"></a><strong>Step 4.</strong> Now, please download <a href="https://www.nitrc.org/projects/mricrogl/">MRIcroGL</a>. This will allow one to convert the dicom files to nifti and the sidecar json files through a GUI.  </span></p>
+<p><a href="wp-content/uploads/2018/02/nitrc-dl-MRIcroGL.png"><img loading="lazy" decoding="async" class="wp-image-411 aligncenter" src="wp-content/uploads/2018/02/nitrc-dl-MRIcroGL.png" alt="nitrc dl MRIcroGL" width="589" height="338" /></a></p>
+<p><span style="font-weight: 400;">At this step, we will be breaking down the process of building the validated BIDS dataset by taking participant 2475376 and iteratively adding a modality once the previous modality has been validated. This means we will first go through the process of validating this dataset using 1 participant with anatomical scans. Next adding in the diffusion scans. Lastly adding in the functional scans.</span></p>
+<p><strong><a id="man5"></a>Step 5.</strong> Before converting the anatomical scans, we will be creating the folder structure in the Nifti directory. To do this, we create a sub-2475376 folder. Within that a ses-1 folder and in that an anat folder. This can be visualized below.</p>
+<p><a href="wp-content/uploads/2018/02/Man-sub-structure.png"><img loading="lazy" decoding="async" class=" wp-image-444 aligncenter" src="wp-content/uploads/2018/02/Man-sub-structure.png" alt="Man sub structure" width="359" height="136" /></a></p>
+<p><span style="font-weight: 400;">To begin conversion, we will take participant 2475376’s anat folder. </span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-413 aligncenter" src="wp-content/uploads/2018/02/sub247_justanat.png" alt="sub247_justanat" width="329" height="257" /></p>
+<p><span style="font-weight: 400;">To open the converter dcm2nii, please go to the MRIcroGL folder from the download above, click MRIcro, and click Import -&gt; Convert DICOM to NIfTI. Dcm2nii GUI should appear.</span></p>
+<p><a href="wp-content/uploads/2018/02/contents-of-dcm2niix-ARROW.jpg"><img loading="lazy" decoding="async" class="wp-image-432 aligncenter" src="wp-content/uploads/2018/02/contents-of-dcm2niix-ARROW.jpg" alt="contents of dcm2niix-ARROW" width="470" height="374" /></a></p>
+<p><a href="wp-content/uploads/2018/02/import-dcm2nii.png"><img loading="lazy" decoding="async" class=" wp-image-371 aligncenter" src="wp-content/uploads/2018/02/import-dcm2nii.png" alt="import dcm2nii" width="376" height="57" /></a></p>
+<p><img loading="lazy" decoding="async" class="wp-image-370 aligncenter" src="wp-content/uploads/2018/02/dcm2nii.png" alt="dcm2nii" width="442" height="200" /></p>
+<p><span style="font-weight: 400;">Listed below is the default and different options for choosing the Output name. We used the default for this conversion.<a href="wp-content/uploads/2018/02/dcm2nii-naming-options.png"><img loading="lazy" decoding="async" class="wp-image-462 aligncenter" src="wp-content/uploads/2018/02/dcm2nii-naming-options.png" alt="dcm2nii naming options" width="433" height="122" /></a></span>An example of the of the output filename is shown in the GUI on the first line. In the picture above the example output filename is: ‘/myfolder_MPRAGE.nii’.</p>
+<p><span style="font-weight: 400;">The output folder will be the Nifti folder.  For input please select the participant directory. One may have to try this process a few times to find the best output name to work with. It is recommended that [participant number]_[protocol] be the output of dcm2nii. The output of performing the dcm2nii conversion are nii and json files. The nii file is the brain image and the sidecar json file stores the metadata to describe the nii file. </span><a href="wp-content/uploads/2018/02/dataset_descrip.png"><img loading="lazy" decoding="async" class=" wp-image-400 aligncenter" src="wp-content/uploads/2018/02/dataset_descrip.png" alt="dataset_descrip" width="296" height="183" /></a></p>
+<p><span style="font-weight: 400;"><a id="man6"></a><a id="aman6"></a><strong>Step 6.</strong> Now we are ready to rename the nifti and json file names. </span><span style="font-weight: 400;">The template for <a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#anatomy-imaging-data">naming anatomical images</a>. The not bracketed elements are required and the bracketed elements are optional. (i.e. modality label is required, acq is optional). Note that the nifti and json file have the same filename, the crop does not have a json file because the json file describes this nifii image as well.</span></p>
+<p><a href="wp-content/uploads/2018/02/Man-Anat-rename.jpg"><img loading="lazy" decoding="async" class=" wp-image-450 aligncenter" src="wp-content/uploads/2018/02/Man-Anat-rename.jpg" alt="Man Anat rename" width="433" height="50" /></a></p>
+<p><span style="font-weight: 400;"><a id="man7"></a><strong>Step 7.</strong> We are ready to organize the nii and json files into the appropriate folder. In this case, the three files we renamed will be placed in the ses-1/anat folder. One can try to <a href="http://bids-standard.github.io/bids-validator/">validate</a> the dataset.</span></p>
+<p><img loading="lazy" decoding="async" class="wp-image-399 alignleft" src="wp-content/uploads/2018/02/anat-organized.png" alt="anat organized" width="356" height="219" /></p>
+<p><img loading="lazy" decoding="async" class="wp-image-453 alignright" src="wp-content/uploads/2018/02/Man-Anat-upload.png" alt="Man Anat upload" width="361" height="334" /></p>
+<p><a href="wp-content/uploads/2018/02/Bids-valid-dataset.png"><img loading="lazy" decoding="async" class="wp-image-419 aligncenter" src="wp-content/uploads/2018/02/Bids-valid-dataset.png" alt="Bids valid dataset" width="307" height="32" /></a><a id="man8"></a><strong>Step 8.</strong> We will now be adding in the diffusion scans. The diffusion scans can be found in session 1 and 2 folders marked DTI_mx_137 within the originally downloaded subject folder. We will now take the two diffusion folders, move them into our Dicom folder, and convert the images. For conversion, input the session folder and output the Nifti folder. One will run the converter twice, once for each session folder. This will output the nii, json, bval, and bvec files. In addition, please create a ses-2 folder within the subject folder in the Nifti folder and add a dwi folder to each session.</p>
+<p><a href="wp-content/uploads/2018/02/raw-diff-in-Dicom.png"><img loading="lazy" decoding="async" class="wp-image-397 alignleft" src="wp-content/uploads/2018/02/raw-diff-in-Dicom.png" alt="raw diff in Dicom" width="376" height="188" /></a></p>
+<p><a href="wp-content/uploads/2018/02/converted-diff-ses2-dwi-folder.png"><img loading="lazy" decoding="async" class="wp-image-396 alignnone" src="wp-content/uploads/2018/02/converted-diff-ses2-dwi-folder.png" alt="converted diff dwi folder" width="344" height="367" /></a></p>
+<p><span style="font-weight: 400;"><a id="man9"></a><strong>Step 9.</strong> We are ready to <a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#diffusion-imaging-data">rename the diffusion scans</a>. In this case, there are two diffusion scans, one for each session. Pictured below is the renaming of each session to the BIDS filenames for the nii, json, bval, and bvec. Notice that within the same session number, all the files have the same filename.</span></p>
+<p><a href="wp-content/uploads/2018/02/Diff-namechange-arrow.jpg"><img loading="lazy" decoding="async" class=" wp-image-461 aligncenter" src="wp-content/uploads/2018/02/Diff-namechange-arrow.jpg" alt="Diff namechange arrow" width="396" height="110" /></a></p>
+<p><span style="font-weight: 400;"><a id="man10"></a><strong>Step 10.</strong> Now we can organize the diffusion scans into their appropriate session folder and try <a href="http://bids-standard.github.io/bids-validator/"> validating</a> this dataset.</span></p>
+<p><a href="wp-content/uploads/2018/02/diff-organized.png"><img loading="lazy" decoding="async" class="wp-image-395 alignleft" src="wp-content/uploads/2018/02/diff-organized.png" alt="diff organized" width="348" height="363" /></a></p>
+<p><a href="wp-content/uploads/2018/02/Man-dwi-upload.png"><img loading="lazy" decoding="async" class="wp-image-454 alignright" src="wp-content/uploads/2018/02/Man-dwi-upload.png" alt="Man dwi upload" width="376" height="348" /></a></p>
+<p><span style="font-weight: 400;"><a href="wp-content/uploads/2018/02/Bids-valid-dataset.png"><img loading="lazy" decoding="async" class="wp-image-419 aligncenter" src="wp-content/uploads/2018/02/Bids-valid-dataset.png" alt="Bids valid dataset" width="287" height="30" /></a><a id="man11"></a><strong>Step 11.</strong> We are ready to add in the functional scans to the Dicom directory. This will be the rest of the folders in the originally downloaded subject. The folders are: TfMRI_breathHold_1400, TfMRI_eyeMovementCalibration_645, TfMRI_eyeMovementCalibration_1400, TfMRI_visualCheckerboard_645, TfMRI_visualCheckerboard_1400, and the three RfMRI folders within the session1 and session2 folders. </span></p>
+<p><a href="wp-content/uploads/2018/02/func-in-Dicom.png"><img loading="lazy" decoding="async" class="wp-image-394 aligncenter" src="wp-content/uploads/2018/02/func-in-Dicom.png" alt="func in Dicom" width="340" height="339" /></a></p>
+<p><span style="font-weight: 400;">Please convert the functional Dicom folders into the Nifti folder. This will output the nii and json files. In addition, please create func folders within both session folders. </span></p>
+<p><a href="wp-content/uploads/2018/02/func-converted-Nifti.png"><img loading="lazy" decoding="async" class="wp-image-393 alignleft" src="wp-content/uploads/2018/02/func-converted-Nifti.png" alt="func converted Nifti" width="418" height="460" /></a></p>
+<p><a href="wp-content/uploads/2018/02/folder-organization-func-.png"><img loading="lazy" decoding="async" class="wp-image-392 alignnone" src="wp-content/uploads/2018/02/folder-organization-func-.png" alt="folder organization func" width="232" height="208" /></a></p>
+<p><span style="font-weight: 400;"><a id="man12"></a><strong>Step 12.</strong> Now let’s <a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#task-including-resting-state-imaging-data">name the functional filenames</a>. To complete this, one may look back at the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/FrontPage.html">NKI webpage</a> and identify the different tasks for the functional images. This will provide a better sense of how to name these files. We see that there are four different tasks: checkerboard, eye movement, breath hold, and rest. We also notice that there are different TR’s for some tasks and the rest tasks have 2 session scans. </span><span style="font-weight: 400;">To break this down, we will go through each task separately.</span></p>
+<p><span style="font-weight: 400;">Let’s begin with the checkerboard task. </span><span style="font-weight: 400;">We notice there are two different TR’s. For TR=645ms, we define this as acq-TR645. Similarly, for TR=1400ms, we define this as acq-TR1400. The acq label was chosen because it is an acquisition difference between the scans. For determining session number, there is not a clear delineation of which session this scan was taken on. Therefore, we defined these scans into session 1, therefore ses-1 will be added as well. </span></p>
+<p><span style="font-weight: 400;">Applying this, we can see how the name will be changed. Both the nii and json will have the same filename (this may be the rule-of-thumb for more beginner users, superusers may reference the <a href="https://bids-specification.readthedocs.io/en/stable/02-common-principles.html#the-inheritance-principle"> Inheritance Principle</a>). Please note the <a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/01-magnetic-resonance-imaging-data.html#task-including-resting-state-imaging-data">ordering of the filename</a>. This is not optional, </span><span style="font-weight: 400;">the order described in the template has to be followed</span><span style="font-weight: 400;">. (i.e. we could not have switched the placement of acq and task, the validator will fail this)</span></p>
+<p><a href="wp-content/uploads/2018/02/Func-checker-namechange-arrow.jpg"><img loading="lazy" decoding="async" class=" wp-image-460 aligncenter" src="wp-content/uploads/2018/02/Func-checker-namechange-arrow.jpg" alt="Func checker namechange arrow" width="748" height="64" /></a></p>
+<p><span style="font-weight: 400;">Proceeding onto renaming the eye movement calibrations. The filename will be similar to the checkerboard naming, with the main difference being the different task label.</span></p>
+<p><a href="wp-content/uploads/2018/02/Func-eye-namechange-arrow.jpg"><img loading="lazy" decoding="async" class="alignnone wp-image-487" src="wp-content/uploads/2018/02/Func-eye-namechange-arrow.jpg" alt="Func eye namechange arrow" width="748" height="60" /></a></p>
+<p><span style="font-weight: 400;">Now for the breath hold task. The naming will be similar to the previous tasks, but there is only one TR.</span></p>
+<p><a href="wp-content/uploads/2018/02/Func-breath-namechange-arrow.jpg"><img loading="lazy" decoding="async" class=" wp-image-451 aligncenter" src="wp-content/uploads/2018/02/Func-breath-namechange-arrow.jpg" alt="Func breath namechange arrow" width="738" height="34" /></a></p>
+<p><span style="font-weight: 400;">Finally, the rest task. For this task we notice there is 3 different acquisitions (TR=645,1400, and 2500 with differing voxel size and duration). In addition, these are repeated sessions. Therefore, the session identified in the filename will correspond to what ses number to use (i.e. session 2 will be ses-2). The complete filenames are pictured below. Note the CAP image is the TR=2500ms, this can be found on the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/Rest_CAP.pdf">protocol sheet</a> </span><span style="font-weight: 400;">. </span></p>
+<p><a href="wp-content/uploads/2018/02/Func-rest-namechange-arrow.jpg"><img loading="lazy" decoding="async" class=" wp-image-434 aligncenter" src="wp-content/uploads/2018/02/Func-rest-namechange-arrow.jpg" alt="Func rest namechange arrow" width="622" height="213" /></a></p>
+<p><span style="font-weight: 400;">We are ready to organize the files into the appropriate folder. The session 1 tasks will go into the ses-1/func folder and session 2 tasks will go into ses-2/func. The completed structure is pictured below.</span></p>
+<p><a href="wp-content/uploads/2018/02/func-file-folder-organized.png"><img loading="lazy" decoding="async" class=" wp-image-391 aligncenter" src="wp-content/uploads/2018/02/func-file-folder-organized.png" alt="func file folder organized" width="416" height="703" /></a></p>
+<p><span style="font-weight: 400;"><a id="man13"></a><strong>Step 13.</strong> With the files organized, we will now add the <a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/05-task-events.html">task event .tsv</a> files to describe the task design. For this dataset, there will be five events.tsv files. There is 1 event file for breathhold and 2 for checkerboard and eyemovement (because there are 2 different acq, these event files will have the same content, but different filenames). Rest will not have an events.tsv file. If the events are consistent across the subjects, one can put the events file on the level where the dataset_description.json and subject folders are. If the events are different for each subject, then a sub-# and ses-# needs to precede task-&lt;TakeName&gt;_acq-TR#_events.tsv (i.e. sub-2475376_ses-1_task-Checkerboard_acq-TR1400_events.tsv) and placed at the nii and json level. For this case, since the task is consistent across subjects and sessions, we will put it on the dataset_description level. The contents of these files can be determined from looking at the stimulus design files on the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/FrontPage.html">NKI website</a>. </span></p>
+<p><a href="wp-content/uploads/2018/02/good-checker-design-file.png"><img loading="lazy" decoding="async" class="wp-image-402 alignleft" src="wp-content/uploads/2018/02/good-checker-design-file.png" alt="good checker design file" width="402" height="197" /></a></p>
+<p><span style="font-weight: 400;"><a href="wp-content/uploads/2018/02/events-files.png"><img loading="lazy" decoding="async" class="wp-image-390 alignnone" src="wp-content/uploads/2018/02/events-files.png" alt="events files" width="340" height="143" /></a></span></p>
+<p><strong><a id="man14"></a>Step 14.</strong> We will now try and <a href="http://bids-standard.github.io/bids-validator/">validate</a> this dataset. <span style="font-weight: 400;">One will receive 2 errors, pictured below. We will now go through fixing both these errors.</span></p>
+<p><a href="wp-content/uploads/2018/02/errors-manually.png"><img loading="lazy" decoding="async" class="wp-image-389 aligncenter" src="wp-content/uploads/2018/02/errors-manually.png" alt="errors manually" width="634" height="166" /></a></p>
+<p><span style="font-weight: 400;">Let’s begin with the defining ‘TaskName’. To do this, we will be editing the functional scan’s json files. There are <a href="https://bids-specification.readthedocs.io/en/stable/04-modality-specific-files/05-task-events.html">required fields</a> that need to be present in each func json file. For this dataset, we notice upon opening the json’s that they have defined repetition time and slice timing, but not task name. The task name </span><span style="font-weight: 400;">needs</span><span style="font-weight: 400;"> to be the same name given as the task-&lt;TaskName&gt; in the filename. For example sub-2475376_ses-1_task-Checkerboard_acq-TR645_bold ; the json will have “TaskName”: “Checkerboard”, as pictured below. </span></p>
+<p><a href="wp-content/uploads/2018/02/TaskName-addchange-arrowed.jpg"><img loading="lazy" decoding="async" class=" wp-image-421 aligncenter" src="wp-content/uploads/2018/02/TaskName-addchange-arrowed.jpg" alt="TaskName addchange arrowed" width="768" height="190" /></a></p>
+<p><span style="font-weight: 400;">Once that is complete, we can try <a href="http://bids-standard.github.io/bids-validator/">validating</a> again and notice that a single error remains (Error 2 from above): SliceTiming cannot be greater than RepetitionTime. </span></p>
+<p><span style="font-weight: 400;">To fix this error, we first need to understand what is causing this error. The source of this error can be traced back to the fact that this is a multiband imaging dataset. The GUI version of dcm2nii is an earlier version that was not able to properly record the slice timings for some multiband imaging files, causing an error in the slice timing. A <a href="http://www.mccauslandcenter.sc.edu/crnl/tools/stc">fix</a> for this error has been developed.</span></p>
+<p><span style="font-weight: 400;">For this particular dataset, there is a <a href="https://github.com/Chaogan-Yan/DPABI/tree/master/DPARSF/Docs">corrected time slicing</a> for each of the TR’s.</span></p>
+<p><span style="font-weight: 400;">To correct the slice timing error, one can copy the time slicing found on the github to the slice timing for each of the tasks json files (the files that need to be changed are identified in the error message) Be careful to divide by 1000 because those times are currently in milliseconds not seconds, we need them to be in seconds. </span></p>
+<p><span style="font-weight: 400;">After those numbers have been pasted in. One can run the <a href="http://bids-standard.github.io/bids-validator/">validator</a>. </span></p>
+<p><a href="wp-content/uploads/2018/02/Man-func-upload.png"><img loading="lazy" decoding="async" class=" wp-image-455 aligncenter" src="wp-content/uploads/2018/02/Man-func-upload.png" alt="Man func upload" width="437" height="616" /></a></p>
+<p><a href="wp-content/uploads/2018/02/Bids-valid-dataset.png"><img loading="lazy" decoding="async" class=" wp-image-419 aligncenter" src="wp-content/uploads/2018/02/Bids-valid-dataset.png" alt="Bids valid dataset" width="354" height="37" /></a></p>
+<p><span style="font-weight: 400;"><a id="man15"></a><strong>Step 15.</strong> You have completed manually creating a BIDSified dataset for 1 subject across 2 sessions and 3 modalities! Now try to complete this same process again with participant 3893245. The only difference is that there is no session 1 for the diffusion scan. Pictured below is the structure for participant 3893245. </span></p>
+<p><a href="wp-content/uploads/2018/02/389-manual-organized.png"><img loading="lazy" decoding="async" class=" wp-image-388 aligncenter" src="wp-content/uploads/2018/02/389-manual-organized.png" alt="389 manual organized" width="398" height="533" /></a></p>
+<p><span style="font-weight: 400;">We find after <a href="http://bids-standard.github.io/bids-validator/">validating</a> there are 2 warnings (pictured below). The first warning is because there is no ses-1 dwi scan for participant 3893245. The second warning is because the time series length is different between the two subjects. These messages are warnings versus errors, therefore they can be interpreted as something to understand before moving on, but this is not an error and one can move on after understanding the reason for the warning. </span></p>
+<p><a href="wp-content/uploads/2018/02/warning-after-2subs.png"><img loading="lazy" decoding="async" class="wp-image-387 aligncenter" src="wp-content/uploads/2018/02/warning-after-2subs.png" alt="warning after 2subs" width="689" height="127" /></a></p>
+<p><span style="font-weight: 400;">Now we will go through this same process again in the <a href="bids-tutorial-series-part-1b/index.html">next part</a>, but walking through an automated custom solution.</span></p>
+<p><span style="font-weight: 400;">This tutorial illustrated how to manually step-by-step convert DICOMs from the NKI Test-Retest dataset to a validated BIDS dataset. <a href="bids-tutorial-series-part-1b/index.html">The next tutorial</a> will show how to complete this conversion using an automated custom solution. </span></p>
+</div>
+
+</div>
+
+<div class="post-share">
+<div class="md-social-share-classic"><div class="item share-fb"><div class="fb-like" data-href="http://reproducibility.stanford.edu/bids-tutorial-series-part-1a/" data-width="450" data-layout="button_count" data-show-faces="false" data-send="false"></div></div><div class="item"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://reproducibility.stanford.edu/bids-tutorial-series-part-1a/">Tweet</a></div><div class="item"><div class="g-plusone" data-size="medium" data-action="share" data-annotation="bubble"></div></div><div class="item"><a class="pinterest-share" href="https://www.pinterest.com/pin/create/button/?url=http://reproducibility.stanford.edu/bids-tutorial-series-part-1a/&amp;media=&amp;description=BIDS&#32;Tutorial&#32;Series:&#32;Introductory&#32;Walkthrough" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></div></div></div>
+
+
+<div id="comments">
+
+            <h4 class="comment-title">17 Comments</h4>
+    
+            <ol class="commentlist">
+                    <li class="comment even thread-even depth-1" id="li-comment-535">
+            <div id="comment-535" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">simon jones</span> <span class="comment-date">7 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>I am trying to access the data advertised at <a href="bids-tutorial-series-part-1a/index.html#man1" rel="ugc">http://reproducibility.stanford.edu/bids-tutorial-series-part-1a/#man1</a> but receive a message &#8220;You have not chosen a tool/resource, or you have chosen a private tool/resource that you do not have permission to access.&#8221; when I try to download it.</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-547">
+            <div id="comment-547" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">irjyu</span> <span class="comment-date">7 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>I have the same problems as Simon Jones. I&#8217;m logged in (NITRC), but still received a message &#8221; You have not chosen a tool/resource, or you have chosen a private tool/resource that you do not have permission to access.&#8221; Could you please help with issue.</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor even thread-even depth-1" id="li-comment-574">
+            <div id="comment-574" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">7 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hello,<br />
+Thank you for the comments. To confirm, have you created an account with both NITRC and 1000 Functional Connectomes Project? (<a href="http://fcon_1000.projects.nitrc.org/indi/req_access.html" rel="nofollow ugc">http://fcon_1000.projects.nitrc.org/indi/req_access.html</a>) In addition to being signed into NITRC when trying to download?</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-4535">
+            <div id="comment-4535" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Dianne Patterson</span> <span class="comment-date">6 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>step 7: &#8220;validate&#8221; link is dead.</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor even thread-even depth-1" id="li-comment-4672">
+            <div id="comment-4672" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">6 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi Dianne,</p>
+<p>Thank you for pointing out the dead link, I have updated the links.</p>
+<p>Thank you,<br />
+Franklin</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-7586">
+            <div id="comment-7586" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Elian</span> <span class="comment-date">6 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi,<br />
+There is a typo in the text for the dataset description Json. BidsVersion should be &#8220;Bidsversion&#8221; otherwise the validator throws up an error. Also, would it be possible to add a tutorial on how to convert the information in the txt files given at the NKI website into .tsv files? I am a total newbie and I have no idea how to do this properly so that my dataset is BIDS-compatible. Thanks!</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-7680">
+            <div id="comment-7680" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Rishi Sharma</span> <span class="comment-date">6 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>I am getting this message just after downloading the DICOM image &#8220;This tool/resource&#8217;s administrator will have to grant you permission to view this page&#8221;. What can I do now?</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-7704">
+            <div id="comment-7704" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">6 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi Elian,<br />
+Thank you for your message. This is an interesting error, it appears that the spelling (according to the latest stable specification: <a href="https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#dataset_descriptionjson" rel="nofollow ugc">https://bids-specification.readthedocs.io/en/stable/03-modality-agnostic-files.html#dataset_descriptionjson</a>) is &#8220;BIDSVersion&#8221;. If this persists, can you please open an issue on our validator &#8211; <a href="https://github.com/bids-standard/bids-validator/issues" rel="nofollow ugc">https://github.com/bids-standard/bids-validator/issues</a>. For the txt to tsv conversion, I have listed how I did this in the next tutorial &#8211; <a href="bids-tutorial-series-part-1b/index.html#auto10" rel="ugc">http://reproducibility.stanford.edu/bids-tutorial-series-part-1b/#auto10</a>. This conversion is specific to this set. </p>
+<p>Hi Rishi,<br />
+May you please confirm you have created an account with both NITRC and 1000 Functional Connectomes Project? (<a href="http://fcon_1000.projects.nitrc.org/indi/req_access.html" rel="nofollow ugc">http://fcon_1000.projects.nitrc.org/indi/req_access.html</a>) In addition to being signed into NITRC when trying to download?</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-11407">
+            <div id="comment-11407" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Jing</span> <span class="comment-date">5 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Step 6 the link for &#8220;naming anatomical images&#8221; is dead</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-11412">
+            <div id="comment-11412" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Jing</span> <span class="comment-date">5 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>many links are dead</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor even thread-even depth-1" id="li-comment-11923">
+            <div id="comment-11923" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">5 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi Jing,<br />
+thank you for raising this! I have updated the links.<br />
+Thank you,<br />
+Franklin</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-16298">
+            <div id="comment-16298" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Ryan</span> <span class="comment-date">5 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi,</p>
+<p>Thanks for creating this tutorial. I registered for NITRC and requested access to the 1000 Functional Connectomes Project. The FAQ says that the request can take ~1 day to go through. Would it be possible to update the tutorial with a public dataset that can be accessed more easily?</p>
+<p>Thank you,<br />
+Ryan</p>
+<p>PS I think the word &#8220;conversation&#8221; should be &#8220;conversion&#8221; throughout the text.</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor even thread-even depth-1" id="li-comment-16481">
+            <div id="comment-16481" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">5 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi Ryan, </p>
+<p>Thanks for the message and suggestion. Unfortunately, we do not have plans to redo this tutorial.  </p>
+<p>Also, thanks for catching our `conversation` rather than `conversion`. I have updated the text to reflect this. </p>
+<p>Thank you,<br />
+Franklin</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-18821">
+            <div id="comment-18821" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Donna Gift Cabalo</span> <span class="comment-date">4 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hello. </p>
+<p>Thanks for the tutorial! I have T1 and resting state fmri dataset (just one session) that I am attempting to convert. While my anat folder is a valid data set, I am getting an error the following error on the func folder:<br />
+                       Error 1: [Code 50] TASK_NAME_MUST_DEFINE<br />
+                     Click here for more information about this issue<br />
+I renamed the converted files like the following and transferred them inside the func folder but to no avail.<br />
+                   sub-275679_task-rest_bold.nii<br />
+                   sub-275679_task-rest_bold.json<br />
+What could be causing this?</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor even thread-even depth-1" id="li-comment-22837">
+            <div id="comment-22837" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">4 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi Donna, </p>
+<p>I apologize for my very delayed reply. If you may you please direct questions over to NeuroStars (<a href="https://neurostars.org/tag/bids" rel="nofollow ugc">https://neurostars.org/tag/bids</a>) with the &#8220;bids&#8221; tag. That is an active platform for supporting the community adopting BIDS.</p>
+<p>Thank you,<br />
+Franklin</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-33181">
+            <div id="comment-33181" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Anonymous</span> <span class="comment-date">3 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi, all<br />
+Thank you for the tutorial! I wonder if I get a longitudinal structral MRI data(and I just have structral MRI data without dwi or fmri data), how should I organized? treat the second longitudinal structral MRI data as another subject? (I have put my second longitudinal structral MRI into ses-2 folder, but got an error)</p>
+<p>please give me some advice!<br />
+Many thanks!<br />
+Best,<br />
+Wenjun</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-33187">
+            <div id="comment-33187" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="index.html@p=335.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Anonymous</span> <span class="comment-date">3 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi, all</p>
+<p>I fixed the problem above</p>
+<p>Best,<br />
+Wenjun</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+            </ol>
+                
+                <p class="nocomments">Comments are closed.</p>
+                
+    
+        
+
+</div>
+	</article>
+</div></div><div class="col-md-3 col-md-right col-sm-right"><aside class="blog-widget-area widget-area">       
+	<div id="search-2" class="widget widget_search"><div class="widget_search">
+	<form method="get" id="searchform" action="index.html">
+		<fieldset>
+			<input id="s" type="text" name="s" value="" placeholder="To search type and hit enter..." />
+			<input id="searchsubmit" type="submit" />
+	    </fieldset>
+	</form>
+</div></div><div id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href='2021/12/index.html'>December 2021</a></li>
+	<li><a href='2021/08/index.html'>August 2021</a></li>
+	<li><a href='2021/03/index.html'>March 2021</a></li>
+	<li><a href='2020/10/index.html'>October 2020</a></li>
+	<li><a href='2020/09/index.html'>September 2020</a></li>
+	<li><a href='2020/08/index.html'>August 2020</a></li>
+	<li><a href='2020/03/index.html'>March 2020</a></li>
+	<li><a href='2020/02/index.html'>February 2020</a></li>
+	<li><a href='2020/01/index.html'>January 2020</a></li>
+	<li><a href='2019/10/index.html'>October 2019</a></li>
+	<li><a href='2019/09/index.html'>September 2019</a></li>
+	<li><a href='2019/06/index.html'>June 2019</a></li>
+	<li><a href='2019/05/index.html'>May 2019</a></li>
+	<li><a href='2019/04/index.html'>April 2019</a></li>
+	<li><a href='2019/03/index.html'>March 2019</a></li>
+	<li><a href='2019/02/index.html'>February 2019</a></li>
+	<li><a href='2019/01/index.html'>January 2019</a></li>
+	<li><a href='2018/10/index.html'>October 2018</a></li>
+	<li><a href='2018/09/index.html'>September 2018</a></li>
+	<li><a href='2018/08/index.html'>August 2018</a></li>
+	<li><a href='2018/06/index.html'>June 2018</a></li>
+	<li><a href='2018/05/index.html'>May 2018</a></li>
+	<li><a href='2018/02/index.html'>February 2018</a></li>
+	<li><a href='2017/11/index.html'>November 2017</a></li>
+	<li><a href='2017/10/index.html'>October 2017</a></li>
+	<li><a href='2017/06/index.html'>June 2017</a></li>
+	<li><a href='2017/04/index.html'>April 2017</a></li>
+	<li><a href='2017/01/index.html'>January 2017</a></li>
+	<li><a href='2016/08/index.html'>August 2016</a></li>
+	<li><a href='2016/04/index.html'>April 2016</a></li>
+	<li><a href='2015/12/index.html'>December 2015</a></li>
+	<li><a href='2015/08/index.html'>August 2015</a></li>
+	<li><a href='2015/07/index.html'>July 2015</a></li>
+	<li><a href='2015/06/index.html'>June 2015</a></li>
+			</ul>
+
+			</div>	</aside></div></div>		</div>
+	</div>
+	
+
+<footer>
+	<div class="container">
+		<div class="row">
+
+			
+						<div class="col-md-4 column">
+													<div id="text-3" class="widget widget_text"><h3 class="widget-title">Affiliates</h3>			<div class="textwidget"><h4><a  href=" https://poldracklab.stanford.edu" target="_blank">poldracklab@stanford</a></h4>
+<br />
+<h4><a  href=" https://post.stanford.edu/" target="_blank">Stanford PoST</a></h4>
+<br />
+<h4><a  href=" http://squishymedia.com" target="_blank">Squishymedia</a></h4></div>
+		</div>												</div>
+
+						<div class="col-md-4 column">
+													<div id="text-4" class="widget widget_text"><h3 class="widget-title">Support for CRN provided by</h3>			<div class="textwidget"><a href="http://www.arnoldfoundation.org/" target="_blank" ><img  style="  width: 190px;
+  margin: 10px 0;
+  height: auto;
+  display: block;"
+src="wp-content/uploads/2015/06/ljaf-logo1.png" /></a>
+<br />
+<a href="http://www.nsf.gov/"  target="_blank"><img  style="  width: 200px;
+  margin: 10px 0;
+  height: auto;
+  display: block;" src="wp-content/uploads/2015/06/nsf_logo.png" /></a>
+<br />
+<a href="http://www.drugabuse.gov/"  target="_blank"><img  style="  width: 190px;
+  margin: 10px 0;
+  height: auto;
+  display: block;" src="wp-content/uploads/2015/06/nida-logo.png" /></a></div>
+		</div>												</div>
+
+						<div class="col-md-4 column">
+													
+		<div id="recent-posts-3" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Blog Posts</h3>
+		<ul>
+											<li>
+					<a href="index.html@p=1192.html">The most open and sharing labs on OpenNeuro (March 2021 &#8211; August 2021)</a>
+											<span class="post-date">December 16, 2021</span>
+									</li>
+											<li>
+					<a href="index.html@p=1181.html">Slice timing correction in fMRIprep and linear modeling</a>
+											<span class="post-date">August 24, 2021</span>
+									</li>
+											<li>
+					<a href="index.html@p=1159.html">The most open and sharing labs on OpenNeuro (September 2020 &#8211; February 2021)</a>
+											<span class="post-date">March 29, 2021</span>
+									</li>
+											<li>
+					<a href="index.html@p=1144.html">Copy-pasting your methods section is good, actually.</a>
+											<span class="post-date">October 28, 2020</span>
+									</li>
+											<li>
+					<a href="index.html@p=1097.html">fMRIPrep: Versioning and Long-Term Support</a>
+											<span class="post-date">September 28, 2020</span>
+									</li>
+					</ul>
+
+		</div>												</div>
+						</div>
+	</div>	
+</footer>
+
+
+<div id="copyright">
+	<div class="container">
+		<div class="copyright-text">© Stanford CRN </div>
+		<div class="float-right">
+				</div>
+	</div>
+</div>
+
+</div>
+<!-- end wrap -->
+
+
+<a href="index.html@p=335.html#" id="md-back-top"></a><script type="text/javascript">                                    </script><script type="text/javascript">                                    </script>
+
+
+<script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js@ver=3.51.0-2014.06.20" id="jquery-form-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"https:\/\/reproducibility.stanford.edu\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="wp-content/plugins/contact-form-7/includes/js/scripts.js@ver=4.4.2" id="contact-form-7-js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" id="google-maps-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.easing.js@ver=1.3.0" id="jquery-easing-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.isotope.js@ver=1.5.25" id="isotope-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/owl-carousel/owl.carousel.min.js@ver=1.27" id="owl-carousel-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.flexslider-min.js@ver=2.2.2" id="jquery-flexslider-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/fancybox/jquery.fancybox.pack.js@ver=2.1.5" id="jquery-fancybox-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/fancybox/helpers/jquery.fancybox-media.js@ver=1.0.6" id="jquery-fancybox-media-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.fitvids.js@ver=1.0.3" id="jquery-fitvids-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/mediaelement/mediaelement-and-player.min.js@ver=2.14.2" id="md-mediaelement-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.countTo.js@ver=1.0" id="jquery-countTo-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.viewport.js@ver=1.0" id="jquery-viewport-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.easypiechart.js@ver=1.2.5" id="jquery-easypiechart-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.simple-text-rotator.min.js@ver=1.0" id="jquery-simple-text-rotator-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/assets/js/vendor/bootstrap.js" id="flex-bootstrap-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/assets/js/vendor/plugins.js" id="flex-plugins-js"></script>
+<script type="text/javascript" src="wp-content/themes/flex/assets/js/theme.js" id="flex-js"></script>
+
+</body>
+</html>
+<!-- Dynamic page generated in 0.356 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2025-04-21 18:01:33 -->
+
+<!-- super cache -->

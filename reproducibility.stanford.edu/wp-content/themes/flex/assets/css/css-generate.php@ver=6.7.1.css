@@ -1,0 +1,355 @@
+
+.accent-color{
+	color: #8c1515 !important;
+}
+
+.accent-bgcolor{
+	background-color: #8c1515 !important;
+}
+
+.accent-bordercolor{
+	border-color: #8c1515 !important;
+}
+
+body{
+	color: #012a30;
+	font-family: Source Sans Pro;
+	font-size: 16px;
+	font-weight: 400;
+		
+	background-color: #f5f5f5;
+		
+}
+
+a{
+	color: #8c1515;
+}
+
+
+::selection{
+	color: #fff;
+	background: #8c1515;
+}
+::-moz-selection{
+	color: #fff;
+	background: #8c1515;
+}
+
+.special-font{
+	font-family: Cabin;
+}
+
+h1{
+	color: #8c1515;
+	font-family: Source Sans Pro;
+	font-size: 36px;
+	font-weight: ;
+	line-height: 42px;
+		
+}
+
+h2{
+	color: #5f574f;
+	font-family: Source Sans Pro;
+	font-size: 30px;
+	font-weight: ;
+	line-height: 36px;
+		
+}
+
+h3{
+	color: #5f574f;
+	font-family: Source Sans Pro;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 32px;
+		
+}
+
+h4{
+	color: #1e2733;
+	font-family: Source Sans Pro;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 22px;
+		
+}
+
+h5{
+	color: #1e2733;
+	font-family: Source Sans Pro;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 20px;
+		
+}
+
+h6{
+	color: #1e2733;
+	font-family: Source Sans Pro;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 18px;
+		
+}
+
+.md-special-heading{
+	font-family: Source Sans Pro;
+}
+
+header .header-content{
+	background: #ffffff;
+}
+
+header .header-top{
+	background:#ffffff;
+	color: #888888;
+	font-family: Raleway;
+	font-size: 12px;
+	font-weight: 500;
+		
+}
+
+header .header-top #header-top-menu li a,
+header .header-top .header-social a{
+	color: #888888;
+}
+
+
+.header-menu ul.menu li,
+.header-menu ul.menu li a,
+.header-menu ul.menu > li.simple > ul > li a,
+.header-menu ul.menu > li.megamenu > ul > li > a,
+.header-menu ul.menu > li.megamenu > ul > li > ul > li > a{
+	color: #333333;
+	font-family: Source Sans Pro;
+	font-size: 16px;
+	font-weight: 600;
+}
+
+#search-open{
+	color: #333333;
+}
+
+
+#page-header h2{
+	font-family: Source Sans Pro;
+	font-size: 42px;
+	font-weight: ;
+	line-height: 46px;
+}
+
+#page-header h3{
+	font-family: Source Sans Pro;
+	font-size: 35px;
+	font-weight: ;
+	line-height: 36px;
+}
+
+footer{
+	background: #012a30;
+}
+
+#copyright{
+	background: #041518;
+}
+
+.page-content{
+	background-color: #f5f5f5;
+}
+
+
+.md-portfolio.default .md-work .work-title a,
+.widget_md_widget_twitter ul li{
+	color: #012a30;
+}
+
+
+a:hover,
+header .header-top .header-slogan a,
+header .header-top #header-top-menu li a:hover,
+.header-menu.menu-style-1 ul.menu > li.current_page_item > a,
+.header-menu.menu-style-1 ul.menu > li.current_page_parent > a,
+.header-menu.menu-style-3 ul li.current_page_item > a,
+.header-menu.menu-style-3 ul li.current_page_parent > a,
+.header-menu ul.menu > li:hover > a,
+.header-menu ul.menu > li.megamenu > ul > li:hover > a,
+.header-menu ul.menu > li.current_page_item > a,
+.header-menu ul.menu > li.simple > ul > li a:hover,
+.header-menu ul.menu > li.megamenu > ul > li > ul > li > a:hover,
+#menu-mobile-trigger.open:after,
+#menu-mobile-trigger:hover:after,
+.header-mobile .menu li a:hover,
+.md-portfolio .md-work .work-thumb .mask a:hover,
+.md-blog .post .post-title a:hover,
+.md-blog .post .post-header a:hover,
+.md-blog .post .post-author .author-info h4 a:hover,
+#comments .commentlist li .comment-cont .comment-meta a:hover,
+#comments .commentlist li .comment-cont .comment-author a:hover,
+.md-pagination li.active a,
+.md-pagination.pagination-page span,
+.md-pagination.pagination-page a:hover span,
+.widget_calendar table #today a,
+.widget_calendar table a:hover,
+.widget > ul > li a:hover,
+.widget .tagcloud a:hover,
+footer .widget_calendar table #today a,
+footer .widget_calendar table a:hover,
+footer .widget ul li a:hover,
+footer .widget .tagcloud a:hover,
+#copyright-menu li a:hover,
+.search-title span,
+.md-portfolio.default .md-work .work-title a:hover,
+.md-portfolio-filter a.active,
+.md-button.style-2.standard,
+.md-pagination li a:hover,
+.md-recent-posts .item h2 a:hover,
+.woocommerce-pagination ul li a:hover,
+.woocommerce-pagination ul li span,
+.woocommerce .products .product:hover h3 a,
+.woocommerce-tabs .comment-form-rating .stars a:hover,
+.woocommerce-tabs .comment-form-rating .stars a.active,
+.widget_shopping_cart .cart_list > li a:hover,
+.widget_products .product_list_widget > li a:hover,
+.widget_recently_viewed_products .product_list_widget > li a:hover,
+.widget_recent_reviews .product_list_widget > li a:hover,
+.widget_top_rated_products .product_list_widget > li a:hover{
+	color: #8c1515;
+}
+
+#shop-button,
+header .header-cart span,
+.header-menu.menu-style-1 ul.menu > li > a:after,
+.header-menu.menu-style-1 ul.menu > li:hover > a:after,
+.header-menu.menu-style-1 ul.menu > li.current_page_item > a:after,
+.header-menu.menu-style-1 ul.menu > li.current_page_parent > a:after,
+.header-menu.menu-style-2 ul.menu > li > a:after,
+.header-menu.menu-style-2 ul.menu > li.current_page_item > a:after,
+.header-menu.menu-style-2 ul.menu > li.current_page_parent > a:after,
+.header-menu.menu-style-4 ul.menu > li > a:hover,
+.header-menu.menu-style-4 ul.menu > li:hover > a,
+.header-menu.menu-style-4 ul.menu > li.current_page_item > a,
+.header-menu.menu-style-4 ul.menu > li.current_page_parent > a,
+.header-menu.menu-style-5 ul.menu > li > a:hover,
+.header-menu.menu-style-5 ul.menu > li:hover > a,
+.header-menu.menu-style-5 ul.menu > li.current_page_item > a,
+.header-menu.menu-style-5 ul.menu > li.current_page_parent > a,
+section.bg-accent-color,
+.widget_shopping_cart .button:hover,
+.widget_price_filter .ui-slider .ui-slider-handle,
+.md-accordions .panel .panel-heading a,
+.md-tabs .nav.nav-tabs li.active a,
+.md-button.style-1.standard,
+.md-button.style-2.standard:hover,
+.wpcf7 .wpcf7-submit,
+.mejs-overlay:hover .mejs-overlay-button,
+.mejs-controls .mejs-time-rail .mejs-time-current,
+.mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current,
+.mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+.md-blog .post .post-link,
+.md-blog .post .post-quote,
+.md-blog .post .post-aside,
+.md-blog .post .post-status,
+.comment-respond input#submit:hover,
+.widget_md_widget_social_profiles a:hover,
+.woocommerce .products .product .button,
+.woocommerce .onsale,
+.woocommerce .woocommerce-message,
+.woocommerce .woocommerce-info,
+.woocommerce .cart-empty,
+.woocommerce.widget_price_filter .ui-slider .ui-slider-handle,
+.woocommerce.widget_price_filter .ui-slider .ui-slider-range{
+	background-color: #8c1515;
+}
+
+
+.md-portfolio-filter .current,
+.md-tooltip,
+.md-clients .list .md-client:hover,
+.md-testimonials .md-testimonial .testimonial-image,
+.md-button.style-1.standard,
+.md-button.style-2.standard,
+.md-blog .post.sticky,
+blockquote.style-2,
+.md-blog .post .post-author,
+.widget_md_widget_dribbble ul li:hover,
+.widget_md_widget_pinterest ul li:hover,
+.widget_md_widget_flickr .flickr_badge_image:hover,
+.woocommerce .products .product .added_to_cart,
+.woocommerce .products .product:hover .button{
+	border-color: #8c1515;
+}
+
+
+.md-portfolio.alternative .md-work .work-thumb .mask,
+.md-portfolio.masonry .md-work .work-thumb .mask{
+	background-color: rgba(140, 21, 21, 0.85);
+}
+
+.header-menu ul.menu > li.simple ul,
+.header-menu ul.menu > li.megamenu > ul{
+	border-top-color: #8c1515;
+}
+
+
+#twitter-footer,
+#twitter-footer .md-carousel:after{
+	background-color: ;
+}
+
+
+.md-revslider div,
+.md-revslider a{
+	font-family: Source Sans Pro !important;
+}
+
+
+.page-section.bg-default.arrow-down .section-arrow-left,
+.page-section.bg-default.arrow-down .section-arrow-right{
+	border-top-color: #f5f5f5;
+	border-bottom-color: #f5f5f5;
+}
+
+.page-section.bg-default.arrow-down .section-arrow-left,
+.page-section.bg-default.arrow-up .section-arrow-right{
+	border-left-color: #f5f5f5;
+}
+
+.page-section.bg-default.arrow-down .section-arrow-right,
+.page-section.bg-default.arrow-up .section-arrow-left{
+	border-right-color: #f5f5f5;
+}
+
+/* CUSTOM CSS STARTS HERE */
+                    footer a{
+    color:#fff !important;
+}
+footer a:hover{
+ color: #009B76 !important;    
+}
+
+footer .widget_md_widget_social_profiles a:hover{
+    background-color:#fff;
+    background-color:rgba(255,255,255,0.15);
+}
+footer .column .widget:last-child {
+    margin-bottom:60px;
+}
+
+.md-team .md-member .member-info span.member-name{
+    font-size:20px;
+}
+.img-padding{
+    padding:10px 10px 20px;
+}
+
+
+.item.share-fb{
+    margin-top:-7px;
+}
+
+@media(max-width:320px){
+    html,body{
+        min-width:320px !important;
+    }
+}                

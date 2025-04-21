@@ -1,0 +1,1151 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en-US"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<!-- Mobile Specifics -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Title -->
+<title>BIDS Tutorial Series: Automate the Introductory Walkthrough | Stanford Center for Reproducible Neuroscience</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="../wp-content/uploads/2015/06/favicon.png" />
+
+<!-- Apple Touch Icons -->    
+
+<!-- RSS & Pingbacks -->
+<link rel="alternate" type="application/rss+xml" title="Stanford Center for Reproducible Neuroscience RSS Feed" href="../feed/index.html" />
+<link rel="pingback" href="https://reproducibility.stanford.edu/xmlrpc.php" />
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]--> 
+
+<!-- Google Font for Revolution Slider -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+<meta name='robots' content='max-image-preview:large' />
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<link rel='dns-prefetch' href='https://maps.google.com/' />
+<link rel='dns-prefetch' href='https://fonts.googleapis.com/' />
+<link rel="alternate" type="application/rss+xml" title="Stanford Center for Reproducible Neuroscience &raquo; Feed" href="../feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Stanford Center for Reproducible Neuroscience &raquo; Comments Feed" href="../comments/feed/index.html" />
+<link rel="alternate" type="application/rss+xml" title="Stanford Center for Reproducible Neuroscience &raquo; BIDS Tutorial Series: Automate the Introductory Walkthrough Comments Feed" href="feed/index.html" />
+		<!-- This site uses the Google Analytics by ExactMetrics plugin v8.3.1 - Using Analytics tracking - https://www.exactmetrics.com/ -->
+		<!-- Note: ExactMetrics is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the ExactMetrics settings panel. -->
+					<!-- No tracking code set -->
+				<!-- / Google Analytics by ExactMetrics -->
+		<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/reproducibility.stanford.edu\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.7.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='../wp-includes/css/dist/block-library/style.min.css@ver=6.7.1.css' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='../wp-content/plugins/contact-form-7/includes/css/styles.css@ver=4.4.2.css' type='text/css' media='all' />
+<link rel='stylesheet' id='rs-plugin-settings-css' href='../wp-content/plugins/revslider/rs-plugin/css/settings.css@ver=4.6.3.css' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
+</style>
+<link rel='stylesheet' id='wpsm_team_b-font-awesome-front-css' href='../wp-content/plugins/team-builder/assets/css/font-awesome/css/font-awesome.min.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsm_team_b_bootstrap-front-css' href='../wp-content/plugins/team-builder/assets/css/bootstrap-front.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsm_team_b_team-css' href='../wp-content/plugins/team-builder/assets/css/team.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpsm_team_b_owl_carousel_min_css-css' href='../wp-content/plugins/team-builder/assets/css/owl.carousel.min.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='fontawesome-css' href='../wp-content/themes/flex/framework/assets/fonts/fontawesome/font-awesome.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='lineicons-css' href='../wp-content/themes/flex/framework/assets/fonts/lineicons/lineicons.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='typicons-css' href='../wp-content/themes/flex/framework/assets/fonts/typicons/typicons.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='entypo-css' href='../wp-content/themes/flex/framework/assets/fonts/entypo/entypo.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css' href='../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/owl-carousel/owl.carousel.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-fancybox-css' href='../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/fancybox/jquery.fancybox.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='animate-css' href='../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/css/animate.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flex-css' href='../wp-content/themes/flex_child/style.css@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flex-generate-css' href='../wp-content/themes/flex/assets/css/css-generate.php@ver=6.7.1.css' type='text/css' media='all' />
+<link rel='stylesheet' id='flex-custom-css' href='../wp-content/themes/flex/assets/css/custom.css@ver=6.7.1.css' type='text/css' media='all' />
+<style id='akismet-widget-style-inline-css' type='text/css'>
+
+			.a-stats {
+				--akismet-color-mid-green: #357b49;
+				--akismet-color-white: #fff;
+				--akismet-color-light-grey: #f6f7f7;
+
+				max-width: 350px;
+				width: auto;
+			}
+
+			.a-stats * {
+				all: unset;
+				box-sizing: border-box;
+			}
+
+			.a-stats strong {
+				font-weight: 600;
+			}
+
+			.a-stats a.a-stats__link,
+			.a-stats a.a-stats__link:visited,
+			.a-stats a.a-stats__link:active {
+				background: var(--akismet-color-mid-green);
+				border: none;
+				box-shadow: none;
+				border-radius: 8px;
+				color: var(--akismet-color-white);
+				cursor: pointer;
+				display: block;
+				font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen-Sans', 'Ubuntu', 'Cantarell', 'Helvetica Neue', sans-serif;
+				font-weight: 500;
+				padding: 12px;
+				text-align: center;
+				text-decoration: none;
+				transition: all 0.2s ease;
+			}
+
+			/* Extra specificity to deal with TwentyTwentyOne focus style */
+			.widget .a-stats a.a-stats__link:focus {
+				background: var(--akismet-color-mid-green);
+				color: var(--akismet-color-white);
+				text-decoration: none;
+			}
+
+			.a-stats a.a-stats__link:hover {
+				filter: brightness(110%);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 0 2px rgba(0, 0, 0, 0.16);
+			}
+
+			.a-stats .count {
+				color: var(--akismet-color-white);
+				display: block;
+				font-size: 1.5em;
+				line-height: 1.4;
+				padding: 0 13px;
+				white-space: nowrap;
+			}
+		
+</style>
+<link rel='stylesheet' id='redux-google-fonts-flex-css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600%2C700%7CCabin%3A700&#038;subset=latin&#038;ver=1594231710' type='text/css' media='all' />
+<script type="text/javascript" src="../wp-includes/js/jquery/jquery.min.js@ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="../wp-includes/js/jquery/jquery-migrate.min.js@ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="../wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.tools.min.js@ver=4.6.3" id="tp-tools-js"></script>
+<script type="text/javascript" src="../wp-content/plugins/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js@ver=4.6.3" id="revmin-js"></script>
+<script type="text/javascript" src="../wp-content/plugins/team-builder/assets/js/owl.carousel.min.js@ver=6.7.1" id="wpsm_team_b_owl_carousel_min_js-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/md-shortcodes.js@ver=1" id="md-shortcodes-js"></script>
+<link rel="https://api.w.org/" href="../wp-json/index.html" /><link rel="alternate" title="JSON" type="application/json" href="../wp-json/wp/v2/posts/529" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc.php@rsd" />
+<meta name="generator" content="WordPress 6.7.1" />
+<link rel="canonical" href="../index.html@p=529.html" />
+<link rel='shortlink' href='../index.html@p=529.html' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="../wp-json/oembed/1.0/embed@url=https%253A%252F%252Freproducibility.stanford.edu%252Fbids-tutorial-series-part-1b%252F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed@url=https%253A%252F%252Freproducibility.stanford.edu%252Fbids-tutorial-series-part-1b%252F&amp;format=xml" />
+		<script type="text/javascript">
+			jQuery(document).ready(function() {
+				// CUSTOM AJAX CONTENT LOADING FUNCTION
+				var ajaxRevslider = function(obj) {
+				
+					// obj.type : Post Type
+					// obj.id : ID of Content to Load
+					// obj.aspectratio : The Aspect Ratio of the Container / Media
+					// obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
+					
+					var content = "<h2>THIS IS SOME TITLE</h2><br/>";
+
+					content += "Type:"+obj.type+"</br>";
+					content += "ID:"+obj.id+"</br>";        
+					content += "Aspect Ratio:"+obj.aspectratio+"</br>";  
+					
+					data = {};
+					
+					data.action = 'revslider_ajax_call_front';
+					data.client_action = 'get_slider_html';
+					data.token = '4b6a8dde7f';
+					data.type = obj.type;
+					data.id = obj.id;
+					data.aspectratio = obj.aspectratio;
+					
+					// SYNC AJAX REQUEST
+					jQuery.ajax({
+						type:"post",
+						url:"https://reproducibility.stanford.edu/wp-admin/admin-ajax.php",
+						dataType: 'json',
+						data:data,
+						async:false,
+						success: function(ret, textStatus, XMLHttpRequest) {
+							if(ret.success == true)
+								content = ret.data;								
+						},
+						error: function(e) {
+							console.log(e);
+						}
+					});
+					
+					 // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
+					 return content;						 
+				};
+				
+				// CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
+				var ajaxRemoveRevslider = function(obj) {
+					return jQuery(obj.selector+" .rev_slider").revkill();
+				}
+
+				// EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
+				var extendessential = setInterval(function() {
+					if (jQuery.fn.tpessential != undefined) {
+						clearInterval(extendessential);
+						if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined')
+							jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3});   
+							// type:  Name of the Post to load via Ajax into the Essential Grid Ajax Container
+							// func: the Function Name which is Called once the Item with the Post Type has been clicked
+							// killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
+							// openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
+					}
+				},30);
+			});
+		</script>
+		<script type="text/javascript">
+	window._se_plugin_version = '8.1.9';
+</script>
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135646623-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135646623-1');
+</script>
+
+ 
+</head>
+<body class="post-template-default single single-post postid-529 single-format-standard css3-animations-enabled device-desktop md-page-builder" style="background-color:#f5f5f5;background-image:url();">
+	
+<div id="wrap" class="full-width border-4">
+
+	<header class="width-fixed height-80 attachment-fixed border-4 scroll-resize ">
+		
+		
+
+
+		<div class="header-content" id="header-content">		
+			<div class="container">
+				<div id="logo">
+					<a href="../index.html" title="Stanford Center for Reproducible Neuroscience">
+						<img src="../wp-content/uploads/2020/07/CRN-2020.png" alt="" />						
+					</a>
+				</div>
+
+				<nav class="header-menu menu-style- menu-uppercase-yes submenu-">
+					<ul id="header-menu" class="menu"><li class="menu-item-23 menu-item menu-item-type-post_type menu-item-object-page menu-item-home simple"><a title="Home Page" href="../index.html">Home</a></li>
+<li class="menu-item-195 menu-item menu-item-type-post_type menu-item-object-page simple"><a href="../index.html@p=28.html">About the Center</a></li>
+<li class="menu-item-44 menu-item menu-item-type-post_type menu-item-object-page simple"><a href="../index.html@p=42.html">Who We Are</a></li>
+<li class="menu-item-52 menu-item menu-item-type-post_type menu-item-object-page simple"><a href="../index.html@p=51.html">Resources</a></li>
+<li class="menu-item-34 menu-item menu-item-type-post_type menu-item-object-page current_page_parent simple"><a href="../blog/index.html">Blog</a></li>
+<li class="menu-item-239 menu-item menu-item-type-post_type menu-item-object-page simple"><a href="../index.html@p=235.html">The OHBM Replication Award</a></li>
+</ul>				</nav>
+
+								
+				<a href="../index.html@p=529.html#" id="search-open"><i class="entypo-search"></i></a>
+
+<div class="header-search">
+	<form method="get" action="../index.html">
+		<fieldset>
+			<input type="text" name="s" value="" placeholder="To search type and press enter..." />
+	    </fieldset>
+	</form>
+	<a href="../index.html@p=529.html#" id="search-close"><i class="entypo-cancel"></i></a>
+</div>
+
+				<a href="../index.html@p=529.html#" id="menu-mobile-trigger"></a>
+			</div>
+		</div>
+
+		<div class="header-mobile">
+			<div class="container">
+				
+
+				<nav class="header-menu-mobile">
+					<ul id="header-menu-mobile" class="menu"><li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-23"><a href="../index.html" title="Home Page">Home</a></li>
+<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="../index.html@p=28.html">About the Center</a></li>
+<li id="menu-item-44" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44"><a href="../index.html@p=42.html">Who We Are</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="../index.html@p=51.html">Resources</a></li>
+<li id="menu-item-34" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-34"><a href="../blog/index.html">Blog</a></li>
+<li id="menu-item-239" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-239"><a href="../index.html@p=235.html">The OHBM Replication Award</a></li>
+</ul>				</nav>
+
+
+			</div>
+		</div>
+	</header>
+
+
+	<div class="page-content" id="post-container">
+		<div class="container">
+		<div class="row"><div class="col-md-9 col-md-left col-sm-left content-full"><div class="md-blog">
+	<article id="post-529" class="single-post post-529 post type-post status-publish format-standard hentry category-blog">
+		
+
+<div class="post-body">
+	
+	<h2 class="post-title">BIDS Tutorial Series: Automate the Introductory Walkthrough</h2>
+	
+	
+<div class="post-header">
+		<span class="meta-date">
+		<i class="icon-calendar"></i> February 22, 2018</span>
+	</span>
+		
+	
+	
+	
+	</div>
+
+
+	<div class="post-content"><p style="text-align: left;"><b>Introduction</b></p>
+<p><span style="font-weight: 400;">Welcome to part 1B of the tutorial series “Getting Started with BIDS”. This tutorial will illustrate how one can automate the conversation of DICOMs into a valid BIDS dataset. This tutorial will follow the same workflow detailed in <a href="../bids-tutorial-series-part-1a/index.html">part 1A</a> of this tutorial series. We will be using DICOMs from the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/FrontPage.html">Nathan Kline Institute (NKI) Rockland Sample &#8211; Multiband Imaging Test-Retest Pilot Dataset</a>. We will be following the specifications described in the <a href="http://bids.neuroimaging.io/bids_spec1.0.2.pdf">BIDS Specification version 1.0.2</a></span><span style="font-weight: 400;">. If you are running into issues, please post your questions on <a href="https://neurostars.org/tags/bids">NeuroStars</a> with the bids tag. The next parts of this tutorial series will examine off-the-shelf solutions to consider using to convert your dataset into the BIDS standard.</span></p>
+<p><span style="font-weight: 400;">Table of Contents<br />
+</span></p>
+<p><span style="font-weight: 400;">B. <a href="../index.html@p=529.html#auto">Automated custom conversation</a></span></p>
+<ol>
+<li><a href="../index.html@p=529.html#auto1">Initialize script and create the dataset_description file</a></li>
+<li><a href="../index.html@p=529.html#auto2">Create anatomical folders and convert dicoms</a></li>
+<li><a href="../index.html@p=529.html#auto3">Rename anatomical files</a></li>
+<li><a href="../index.html@p=529.html#auto4">Organize anatomical files and validate</a></li>
+<li><a href="../index.html@p=529.html#auto5">Create diffusion folders and convert dicoms</a></li>
+<li><a href="../index.html@p=529.html#auto6">Rename diffusion files</a></li>
+<li><a href="../index.html@p=529.html#auto7">Organize diffusion files and validate</a></li>
+<li><a href="../index.html@p=529.html#auto8">Create functional folders and convert dicoms</a></li>
+<li><a href="../index.html@p=529.html#auto9">Rename and organize functional files</a></li>
+<li><a href="../index.html@p=529.html#auto10">Task event tsv files</a></li>
+<li><a href="../index.html@p=529.html#auto11">Fix errors</a></li>
+<li><a href="../index.html@p=529.html#auto12">Validate and add participant</a><a id="man"></a></li>
+</ol>
+<p>&nbsp;</p>
+<p><a id="auto"></a><strong>1B. Automated Custom Solution</strong></p>
+<p><span style="font-weight: 400;">The automated custom solution is going through the same process done in <a href="../bids-tutorial-series-part-1a/index.html">part 1A</a>, but with a script. The <a href="https://github.com/franklin-feingold/BIDS-Example-NKI-RS-Multiband-Imaging">automated custom solution</a> is written in a bash shell script. This script is dependent upon <a href="https://brew.sh/">homebrew</a>, <a href="https://github.com/jpmens/jo">jo</a>, <a href="https://stedolan.github.io/jq/download/">jq</a>, <a href="https://github.com/rordenlab/dcm2niix/releases/tag/v1.0.20171215">dcm2niix</a> (jo and jq can be installed from homebrew). The script assumes that the Dicom folder with subjects needed to be converted exists. Each code snippet is part of the larger script. </span></p>
+<p><span style="font-weight: 400;"><a id="auto1"></a><strong>Step 1.</strong> To begin, we need to define our paths and create the Nifti directory. These paths </span><b>need to be changed</b><span style="font-weight: 400;"> according to what your paths are. These path variables are important to remember because these path variables are called throughout the script. (i.e. the variable niidir is defined as the path: /Users/franklinfeingold/Desktop/NKI_script/Nifti)</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">#!/bin/bash</span>
+
+set -e 
+<span style="color: #9f9e9e; font-style: italic;">####Defining pathways</span>
+toplvl=/Users/franklinfeingold/Desktop/NKI_script
+dcmdir=/Users/franklinfeingold/Desktop/NKI_script/Dicom
+dcm2niidir=/Users/franklinfeingold/Desktop/dcm2niix_3-Jan-2018_mac
+<span style="color: #9f9e9e; font-style: italic;">#Create nifti directory</span>
+mkdir ${toplvl}/Nifti
+niidir=${toplvl}/Nifti</pre>
+</div>
+<p><span style="font-weight: 400;">Then we can generate the dataset_description.json file.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">###Create dataset_description.json</span>
+jo -p "Name"="NKI-Rockland Sample - Multiband Imaging Test-Retest Pilot Dataset" "BIDSVersion"="1.0.2" &gt;&gt; ${niidir}/dataset_description.json</pre>
+</div>
+<p><span style="font-weight: 400;"><a id="auto2"></a><strong>Step 2.</strong> To begin the workflow, the loop prints out the subject currently being processed and creates the session and anat folder within the subject folder. Then we convert with dcm2niix the anatomical dicoms into the nifti and json file, and output them in the subject folder within the Nifti folder (output pictured below). Please note that the converter input is the anat folder within the subjects Dicom folder.</span></p>
+<p>The for loop can iterate through every subject defined in the Dicom directory. For this walkthrough, we are only running through participant 2475376. One may add participant 3893245 when comfortable with the workflow. A participant will go through the entire workflow before the next one begins.</p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">####Anatomical Organization####</span>
+for subj in 2475376; do
+	echo "Processing subject $subj"
+
+<span style="color: #9f9e9e; font-style: italic;">###Create structure</span>
+mkdir -p ${niidir}/sub-${subj}/ses-1/anat
+
+<span style="color: #9f9e9e; font-style: italic;">###Convert dcm to nii
+#Only convert the Dicom folder anat</span>
+for direcs in anat; do
+${dcm2niidir}/dcm2niix -o ${niidir}/sub-${subj} -f ${subj}_%f_%p ${dcmdir}/${subj}/${direcs}
+done
+</pre>
+</div>
+<p><a href="../wp-content/uploads/2018/02/Script_anat-converted-raw.png"><img decoding="async" class=" wp-image-435 aligncenter" src="../wp-content/uploads/2018/02/Script_anat-converted-raw.png" alt="Script_anat converted raw" width="270" height="135" /></a></p>
+<p><span style="font-weight: 400;">We changed the directory to where the converted nifti images are. In that directory, we can more easily change the filenames for the anat nii and json files.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">#Changing directory into the subject folder</span>
+cd ${niidir}/sub-${subj}
+</pre>
+</div>
+<p><a id="auto3"></a><span style="font-weight: 400;"><strong>Step 3.</strong> Now we can rename the anat files, following the same rule applied in <a href="../bids-tutorial-series-part-1a/index.html#man6">step 6</a> of part A. This code snippet will capture the number of anat files needed to be changed, go through each anat file and rename it to the valid BIDS filename.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">###Change filenames
+##Rename anat files
+#Example filename: 2475376_anat_MPRAGE
+#BIDS filename: sub-2475376_ses-1_T1w
+#Capture the number of anat files to change</span>
+anatfiles=$(ls -1 *MPRAGE* | wc -l)
+for ((i=1;i&lt;=${anatfiles};i++)); do
+Anat=$(ls *MPRAGE*) <span style="color: #9f9e9e; font-style: italic;">#This is to refresh the Anat variable, if this is not in the loop, each iteration a new "No such file or directory error", this is because the filename was changed. </span>
+tempanat=$(ls -1 $Anat | sed '1q;d') <span style="color: #9f9e9e; font-style: italic;">#Capture new file to change</span>
+tempanatext="${tempanat##*.}"
+tempanatfile="${tempanat%.*}"
+mv ${tempanatfile}.${tempanatext} sub-${subj}_ses-1_T1w.${tempanatext}
+echo "${tempanat} changed to sub-${subj}_ses-1_T1w.${tempanatext}"
+done 
+</pre>
+</div>
+<p><a id="auto4"></a><br />
+<span style="font-weight: 400;"><strong>Step 4.</strong> Next, we can organize the valid BIDS filenames into the ses-1/anat folder. The complete file structure to this point is pictured below.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">###Organize files into folders</span>
+for files in $(ls sub*); do 
+Orgfile="${files%.*}"
+Orgext="${files##*.}"
+Modality=$(echo $Orgfile | rev | cut -d '_' -f1 | rev)
+if [ $Modality == "T1w" ]; then
+	mv ${Orgfile}.${Orgext} ses-1/anat
+else
+:
+fi 
+done
+</pre>
+</div>
+<p><a href="../wp-content/uploads/2018/02/Script_anat-organized.png"><img decoding="async" class="size-full wp-image-436 aligncenter" src="../wp-content/uploads/2018/02/Script_anat-organized.png" alt="Script_anat organized" width="296" height="134" /></a></p>
+<p><span style="font-weight: 400;">We have completed organizing the anat files. One can try <a href="http://bids-standard.github.io/bids-validator/">confirming</a> this is a validated BIDS dataset at this point. Once the validation is confirmed, we are ready to organize the diffusion files.</span></p>
+<p><a id="auto5"></a><br />
+<span style="font-weight: 400;"><strong>Step 5.</strong> To begin organizing the diffusion scans, we will generate the folder structure by creating a dwi folder within ses-1 and ses-2. Then we can convert the Dicom DTI folders within session1 and session2 and output the nii and json files to the participants Nifti folder. The output and current file structure can be seen below.  </span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">####Diffusion Organization####
+#Create subject folder </span>
+mkdir -p ${niidir}/sub-${subj}/{ses-1,ses-2}/dwi</pre>
+</div>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">###Convert dcm to nii
+#Converting the two diffusion Dicom directories</span>
+for direcs in session1 session2; do
+${dcm2niidir}/dcm2niix -o ${niidir}/sub-${subj} -f ${subj}_${direcs}_%p ${dcmdir}/${subj}/${direcs}/DTI*
+done
+</pre>
+</div>
+<p><a href="../wp-content/uploads/2018/02/Script_Diff-raw-convert-with-anat-organized.png"><img fetchpriority="high" decoding="async" class="wp-image-438 aligncenter" src="../wp-content/uploads/2018/02/Script_Diff-raw-convert-with-anat-organized.png" alt="Script_Diff raw convert with anat organized" width="223" height="238" /></a></p>
+<p><span style="font-weight: 400;">Next, we change the directory into the participants Nifti folder, where the converted nii and json files are.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">#Changing directory into the subject folder</span>
+cd ${niidir}/sub-${subj}
+</pre>
+</div>
+<p><span style="font-weight: 400;"><a id="auto6"></a><strong>Step 6.</strong> Now we can rename the diffusion nii and json files, similar to <a href="../bids-tutorial-series-part-1a/index.html#man9">step 9</a> in part A. The original filename and BIDS filename are printed out.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">#change dwi
+#Example filename: 2475376_session2_DIFF_137_AP_RR
+#BIDS filename: sub-2475376_ses-2_dwi
+#difffiles will capture how many filenames to change</span>
+difffiles=$(ls -1 *DIFF* | wc -l)
+for ((i=1;i&lt;=${difffiles};i++));
+do
+	Diff=$(ls *DIFF*) <span style="color: #9f9e9e; font-style: italic;">#This is to refresh the diff variable, same as the cases above. </span>
+	tempdiff=$(ls -1 $Diff | sed '1q;d')
+	tempdiffext="${tempdiff##*.}"
+	tempdifffile="${tempdiff%.*}"
+	Sessionnum=$(echo $tempdifffile | cut -d '_' -f2)
+	Difflast=$(echo "${Sessionnum: -1}")
+	if [ $Difflast == 2 ]; then 
+	ses=2
+	else
+	ses=1
+	fi
+	mv ${tempdifffile}.${tempdiffext} sub-${subj}_ses-${ses}_dwi.${tempdiffext}
+	echo "$tempdiff changed to sub-${subj}_ses-${ses}_dwi.${tempdiffext}"
+done
+</pre>
+</div>
+<p><span style="font-weight: 400;"><a id="auto7"></a><strong>Step 7.</strong> After the filenames have been renamed, we can organize the files into their correct directories. The filenames and structure are visualized below.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">###Organize files into folders</span>
+for files in $(ls sub*); do 
+Orgfile="${files%.*}"
+Orgext="${files##*.}"
+Modality=$(echo $Orgfile | rev | cut -d '_' -f1 | rev)
+Sessionnum=$(echo $Orgfile | cut -d '_' -f2)
+Difflast=$(echo "${Sessionnum: -1}")
+if [[ $Modality == "dwi" &amp;&amp; $Difflast == 2 ]]; then
+	mv ${Orgfile}.${Orgext} ses-2/dwi
+else
+if [[ $Modality == "dwi" &amp;&amp; $Difflast == 1 ]]; then
+	mv ${Orgfile}.${Orgext} ses-1/dwi
+fi 
+fi
+done
+</pre>
+</div>
+<p><a href="../wp-content/uploads/2018/02/Script_Diff-organized-good-filename.png"><img loading="lazy" decoding="async" class="wp-image-437 aligncenter" src="../wp-content/uploads/2018/02/Script_Diff-organized-good-filename.png" alt="Script_Diff organized good filename" width="245" height="273" /></a></p>
+<p><span style="font-weight: 400;">We have completed the organization of the diffusion scans. One may confirm this is still a valid BIDS dataset through <a href="http://bids-standard.github.io/bids-validator/">validation</a>. Once validated, we are ready to organize the functional scans.</span></p>
+<p><span style="font-weight: 400;"><a id="auto8"></a><strong>Step 8.</strong> To begin organizing the functional scans, we will create the functional folder structure by adding a func folder to both ses-1 and ses-2. With the folders created, we can now convert the functional dicom files to nifti and json files. To do this, we converted the folders that comprise the functional dicoms and output the nii and json files to within the participant&#8217;s folders in the Nifti directory. The folder names are contained within the for loop. The output and folder structure is visualized below.   </span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">####Functional Organization####
+#Create subject folder</span>
+mkdir -p ${niidir}/sub-${subj}/{ses-1,ses-2}/func</pre>
+</div>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">###Convert dcm to nii</span>
+for direcs in TfMRI_breathHold_1400 TfMRI_eyeMovementCalibration_1400 TfMRI_eyeMovementCalibration_645 TfMRI_visualCheckerboard_1400 TfMRI_visualCheckerboard_645 session1 session2; do
+if [[ $direcs == "session1" || $direcs == "session2" ]]; then
+for rest in RfMRI_mx_645 RfMRI_mx_1400 RfMRI_std_2500; do 
+${dcm2niidir}/dcm2niix -o ${niidir}/sub-${subj} -f ${subj}_${direcs}_%p ${dcmdir}/${subj}/${direcs}/${rest}
+done
+else
+${dcm2niidir}/dcm2niix -o ${niidir}/sub-${subj} -f ${subj}_${direcs}_%p ${dcmdir}/${subj}/${direcs}
+fi
+done
+</pre>
+</div>
+<p><a href="../wp-content/uploads/2018/02/Script_func-dcm2niix-output-with-structure.png"><img loading="lazy" decoding="async" class=" wp-image-441 aligncenter" src="../wp-content/uploads/2018/02/Script_func-dcm2niix-output-with-structure.png" alt="Script_func dcm2niix output with structure" width="342" height="498" /></a></p>
+<p><span style="font-weight: 400;">We changed the directory into where the converted nii and json files are, in the participant&#8217;s Nifti folder.  </span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">#Changing directory into the subject folder</span>
+cd ${niidir}/sub-${subj}
+</pre>
+</div>
+<p><span style="font-weight: 400;"><a id="auto9"></a><strong>Step 9.</strong> Now we can rename the func files, similar to <a href="../bids-tutorial-series-part-1a/index.html#man12">step 12</a> in part A. To do this, we changed filenames task by task. The order we renamed in: Checkerboard, eye movement, breath hold, and rest. Note that the rest scans still span across 2 sessions.</span><br />
+Checkerboard files renamed</p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">##Rename func files
+#Break the func down into each task
+#Checkerboard task
+#Example filename: 2475376_TfMRI_visualCheckerboard_645_CHECKERBOARD_645_RR
+#BIDS filename: sub-2475376_ses-1_task-Checkerboard_acq-TR645_bold
+#Capture the number of checkerboard files to change</span>
+checkerfiles=$(ls -1 *CHECKERBOARD* | wc -l)
+for ((i=1;i&lt;=${checkerfiles};i++)); do
+Checker=$(ls *CHECKERBOARD*) <span style="color: #9f9e9e; font-style: italic;">#This is to refresh the Checker variable, same as the Anat case</span>
+tempcheck=$(ls -1 $Checker | sed '1q;d') <span style="color: #9f9e9e; font-style: italic;">#Capture new file to change</span>
+tempcheckext="${tempcheck##*.}"
+tempcheckfile="${tempcheck%.*}"
+TR=$(echo $tempcheck | cut -d '_' -f4) <span style="color: #9f9e9e; font-style: italic;">#f4 is the fourth field delineated by _ to capture the acquisition TR from the filename</span>
+mv ${tempcheckfile}.${tempcheckext} sub-${subj}_ses-1_task-Checkerboard_acq-TR${TR}_bold.${tempcheckext}
+echo "${tempcheckfile}.${tempcheckext} changed to sub-${subj}_ses-1_task-Checkerboard_acq-TR${TR}_bold.${tempcheckext}"
+done
+</pre>
+</div>
+<p>Eye movement calibration files renamed</p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">#Eye Movement
+#Example filename: 2475376_TfMRI_eyeMovementCalibration_645_EYE_MOVEMENT_645_RR
+#BIDS filename: sub-2475376_ses-1_task-eyemovement_acq-TR645_bold
+#Capture the number of eyemovement files to change</span>
+eyefiles=$(ls -1 *EYE* | wc -l)
+for ((i=1;i&lt;=${eyefiles};i++)); do
+Eye=$(ls *EYE*)
+tempeye=$(ls -1 $Eye | sed '1q;d')
+tempeyeext="${tempeye##*.}"
+tempeyefile="${tempeye%.*}"
+TR=$(echo $tempeye | cut -d '_' -f4) <span style="color: #9f9e9e; font-style: italic;">#f4 is the fourth field delineated by _ to capture the acquisition TR from the filename</span>
+mv ${tempeyefile}.${tempeyeext} sub-${subj}_ses-1_task-eyemovement_acq-TR${TR}_bold.${tempeyeext}
+echo "${tempeyefile}.${tempeyeext} changed to sub-${subj}_ses-1_task-eyemovement_acq-TR${TR}_bold.${tempeyeext}"
+done
+</pre>
+</div>
+<p>Breath holding files renamed</p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">#Breath Hold
+#Example filename: 2475376_TfMRI_breathHold_1400_BREATH_HOLD_1400_RR
+#BIDS filename: sub-2475376_ses-1_task-breathhold_acq-TR1400_bold
+#Capture the number of breath hold files to change</span>
+breathfiles=$(ls -1 *BREATH* | wc -l)
+for ((i=1;i&lt;=${breathfiles};i++)); do
+Breath=$(ls *BREATH*)
+tempbreath=$(ls -1 $Breath | sed '1q;d')
+tempbreathext="${tempbreath##*.}"
+tempbreathfile="${tempbreath%.*}"
+TR=$(echo $tempbreath | cut -d '_' -f4) <span style="color: #9f9e9e; font-style: italic;">#f4 is the fourth field delineated by _ to capture the acquisition TR from the filename</span>
+mv ${tempbreathfile}.${tempbreathext} sub-${subj}_ses-1_task-breathhold_acq-TR${TR}_bold.${tempbreathext}
+echo "${tempbreathfile}.${tempbreathext} changed to sub-${subj}_ses-1_task-breathhold_acq-TR${TR}_bold.${tempbreathext}"
+done
+</pre>
+</div>
+<p>Rest files renamed</p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">#Rest
+#Example filename: 2475376_session1_REST_645_RR
+#BIDS filename: sub-2475376_ses-1_task-rest_acq-TR645_bold
+#Breakdown rest scans into each TR</span>
+for TR in 645 1400 CAP; do 
+for corrun in $(ls *REST_${TR}*); do
+corrunfile="${corrun%.*}"
+corrunfileext="${corrun##*.}"
+Sessionnum=$(echo $corrunfile | cut -d '_' -f2)
+sesnum=$(echo "${Sessionnum: -1}") 
+if [ $sesnum == 2 ]; then 
+ses=2
+else
+	ses=1
+fi
+if [ $TR == "CAP" ]; then
+	TR=2500
+else
+	:
+fi
+mv ${corrunfile}.${corrunfileext} sub-${subj}_ses-${ses}_task-rest_acq-TR${TR}_bold.${corrunfileext}
+echo "${corrun} changed to sub-${subj}_ses-${ses}_task-rest_acq-TR${TR}_bold.${corrunfileext}"
+done
+done
+</pre>
+</div>
+<p><span style="font-weight: 400;">Next, we will organize the files into the correct directories. We have shown below, the filenames and organization.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">
+###Organize files into folders</span>
+for files in $(ls sub*); do 
+Orgfile="${files%.*}"
+Orgext="${files##*.}"
+Modality=$(echo $Orgfile | rev | cut -d '_' -f1 | rev)
+Sessionnum=$(echo $Orgfile | cut -d '_' -f2)
+Difflast=$(echo "${Sessionnum: -1}")
+if [[ $Modality == "bold" &amp;&amp; $Difflast == 2 ]]; then
+	mv ${Orgfile}.${Orgext} ses-2/func
+else
+if [[ $Modality == "bold" &amp;&amp; $Difflast == 1 ]]; then
+	mv ${Orgfile}.${Orgext} ses-1/func
+fi 
+fi
+done
+</pre>
+</div>
+<p><a href="../wp-content/uploads/2018/02/Script_func-rename-and-organized-script.png"><img loading="lazy" decoding="async" class=" wp-image-442 aligncenter" src="../wp-content/uploads/2018/02/Script_func-rename-and-organized-script.png" alt="Script_func rename and organized script" width="332" height="539" /></a></p>
+<p><span style="font-weight: 400;"><a id="auto10"></a><strong>Step 10. </strong>Now we need to create the <a href="http://bids.neuroimaging.io/bids_spec1.0.2.pdf#page=18">task event tsv</a> files for each of our tasks. The task designs can be found on the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/FrontPage.html">NKI webpage</a>. To determine the Checkerboard events file, one will look at the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/CheckboardParadigm.txt">Checkerboard task design</a>. Here we generated the Checkerboard TR=645 event file.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">###Create events tsv files
+##Create Checkerboard event file
+#Checkerboard acq-TR645
+#Generate Checkerboard acq-TR645 event tsv if it doesn't exist</span>
+if [ -e ${niidir}/task-Checkerboard_acq-TR645_events.tsv ]; then
+	:
+else
+<span style="color: #9f9e9e; font-style: italic;">#Create events file with headers</span>
+echo -e onset'\t'duration'\t'trial_type &gt; ${niidir}/task-Checkerboard_acq-TR645_events.tsv
+<span style="color: #9f9e9e; font-style: italic;">#This file will be placed at the level where dataset_description file and subject folders are.
+#The reason for this file location is because the event design is consistent across subjects.
+#If the event design is consistent across subjects, we can put it at this level. This is because of the Inheritance principle.</span>
+
+<span style="color: #9f9e9e; font-style: italic;">#Create onset column</span>
+echo -e 0'\n'20'\n'40'\n'60'\n'80'\n'100 &gt; ${niidir}/temponset.txt 
+
+<span style="color: #9f9e9e; font-style: italic;">#Create duration column</span>
+echo -e 20'\n'20'\n'20'\n'20'\n'20'\n'20 &gt; ${niidir}/tempdur.txt
+
+<span style="color: #9f9e9e; font-style: italic;">#Create trial_type column</span>
+echo -e Fixation'\n'Checkerboard'\n'Fixation'\n'Checkerboard'\n'Fixation'\n'Checkerboard &gt; ${niidir}/temptrial.txt
+
+<span style="color: #9f9e9e; font-style: italic;">#Paste onset and duration into events file</span>
+paste -d '\t' ${niidir}/temponset.txt ${niidir}/tempdur.txt ${niidir}/temptrial.txt &gt;&gt; ${niidir}/task-Checkerboard_acq-TR645_events.tsv
+
+<span style="color: #9f9e9e; font-style: italic;">#remove temp files</span>
+rm ${niidir}/tempdur.txt ${niidir}/temponset.txt ${niidir}/temptrial.txt
+fi
+</pre>
+</div>
+<p><span style="font-weight: 400;">Since both acquisitions have the same task design, we can simply copy the events file, but renamed.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">##Checkerboard acq-TR1400
+#Generate Checkerboard acq-TR1400 event tsv if it doesn't exist</span>
+if [ -e ${niidir}/task-Checkerboard_acq-TR1400_events.tsv ]; then
+	:
+else
+<span style="color: #9f9e9e; font-style: italic;">#Because the checkerboard design is consistent across the different TRs
+#We can copy the above event file and change the name</span>
+cp ${niidir}/task-Checkerboard_acq-TR645_events.tsv ${niidir}/task-Checkerboard_acq-TR1400_events.tsv
+fi
+</pre>
+</div>
+<p><span style="font-weight: 400;">Now, we will generate the event file for eye movement. We downloaded the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/EyeMovementCalibParadigm.txt">eye movement paradigm</a>. The path that we set for eye movement paradigm was: /Users/franklinfeingold/Desktop/EyemovementCalibParadigm.txt . This <strong>needs to be edited in the script</strong> to where one placed their paradigm file.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">##Eye movement acq-TR645
+#Generate eye movement acq-TR645 event tsv if it doesn't exist</span>
+if [ -e ${niidir}/task-eyemovement_acq-TR645_events.tsv ]; then
+	:
+else
+<span style="color: #9f9e9e; font-style: italic;">#Create events file with headers</span>
+echo -e onset'\t'duration &gt; ${niidir}/task-eyemovement_acq-TR645_events.tsv
+
+<span style="color: #9f9e9e; font-style: italic;">#Creating duration first to help generate the onset file
+#Create temponset file</span>
+onlength=$(cat /Users/franklinfeingold/Desktop/EyemovementCalibParadigm.txt | wc -l)
+for ((i=2;i&lt;=$((onlength-1));i++)); do 
+ontime=$(cat /Users/franklinfeingold/Desktop/EyemovementCalibParadigm.txt | sed "${i}q;d" | cut -d ',' -f1) 
+echo -e ${ontime} &gt;&gt; ${niidir}/temponset.txt
+done
+cp ${niidir}/temponset.txt ${niidir}/temponset2.txt
+echo 108 &gt;&gt; ${niidir}/temponset2.txt <span style="color: #9f9e9e; font-style: italic;">#Eye calibration length is 108 seconds
+
+#Generate tempdur file</span>
+durlength=$(cat ${niidir}/temponset2.txt | wc -l)
+for ((i=1;i&lt;=$((durlength-1));i++)); do 
+durtime=$(cat ${niidir}/temponset2.txt | sed $((i+1))"q;d") 
+onsettime=$(cat ${niidir}/temponset2.txt | sed "${i}q;d") 
+newdur=$(echo "$durtime - $onsettime"|bc) 
+echo "${newdur}" &gt;&gt; ${niidir}/tempdur.txt
+done
+
+<span style="color: #9f9e9e; font-style: italic;">#Paste onset and duration into events file</span>
+paste -d '\t' ${niidir}/temponset.txt ${niidir}/tempdur.txt &gt;&gt; ${niidir}/task-eyemovement_acq-TR645_events.tsv
+
+<span style="color: #9f9e9e; font-style: italic;">#rm temp files</span>
+rm ${niidir}/tempdur.txt ${niidir}/temponset.txt ${niidir}/temponset2.txt 
+fi
+</pre>
+</div>
+<p><span style="font-weight: 400;">Since the task design is consistent across different TR, we can simply copy the task design, but with a different filename.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">##Eye movement acq-TR1400
+#Generate eye movement acq-TR1400 event tsv if it doesn't exist</span>
+if [ -e ${niidir}/task-eyemovement_acq-TR1400_events.tsv ]; then
+	:
+else
+<span style="color: #9f9e9e; font-style: italic;">#Because the eye movement calibration is consistent across the different TRs
+#We can copy the above event file and change the name</span>
+cp ${niidir}/task-eyemovement_acq-TR645_events.tsv ${niidir}/task-eyemovement_acq-TR1400_events.tsv
+fi
+</pre>
+</div>
+<p><span style="font-weight: 400;">Lastly, we will create the event file for the breath hold task by looking at the <a href="http://fcon_1000.projects.nitrc.org/indi/pro/eNKI_RS_TRT/BreathHoldParadigm.txt">breath hold design file</a>.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">##Breath hold acq-TR1400
+#Generate breath hold acq-TR1400 event tsv if it doesn't exist</span>
+if [ -e ${niidir}/task-breathhold_acq-TR1400_events.tsv ]; then
+	:
+else
+<span style="color: #9f9e9e; font-style: italic;">#Create events file with headers</span>
+echo -e onset'\t'duration &gt; ${niidir}/task-breathhold_acq-TR1400_events.tsv
+
+<span style="color: #9f9e9e; font-style: italic;">#Create duration column
+#Creating duration first to help generate the onset file</span>
+dur1=10
+dur2=2
+dur3=3
+
+<span style="color: #9f9e9e; font-style: italic;">#Create tempdur file</span>
+for ((i=1;i&lt;=7;i++)); do 
+echo -e ${dur1}'\n'${dur2}'\n'${dur2}'\n'${dur2}'\n'${dur2}'\n'${dur3}'\n'${dur3}'\n'${dur3}'\n'${dur3}'\n'${dur3}'\n'${dur3} &gt;&gt; ${niidir}/tempdur.txt
+done
+
+<span style="color: #9f9e9e; font-style: italic;">#Create onset column
+#Initialize temponset file</span>
+echo -e 0 &gt; ${niidir}/temponset.txt
+
+<span style="color: #9f9e9e; font-style: italic;">#Generate temponset file</span>
+durlength=$(cat ${niidir}/tempdur.txt | wc -l)
+for ((i=1;i&lt;=$((durlength-1));i++)); do 
+durtime=$(cat ${niidir}/tempdur.txt | sed "${i}q;d") 
+onsettime=$(cat ${niidir}/temponset.txt | sed "${i}q;d") 
+newonset=$((durtime+onsettime)) 
+echo ${newonset} &gt;&gt; ${niidir}/temponset.txt
+done
+
+<span style="color: #9f9e9e; font-style: italic;">#Paste onset and duration into events file</span>
+paste -d '\t' ${niidir}/temponset.txt ${niidir}/tempdur.txt &gt;&gt; ${niidir}/task-breathhold_acq-TR1400_events.tsv
+
+<span style="color: #9f9e9e; font-style: italic;">#rm temp files</span>
+rm ${niidir}/tempdur.txt ${niidir}/temponset.txt 
+fi
+</pre>
+</div>
+<p><span style="font-weight: 400;">Pictured below is the current file structure.</span></p>
+<p><a href="../wp-content/uploads/2018/02/Script_Full-structure-247.png"><img loading="lazy" decoding="async" class=" wp-image-440 aligncenter" src="../wp-content/uploads/2018/02/Script_Full-structure-247.png" alt="Script_Full structure 247" width="366" height="663" /></a></p>
+<p><span style="font-weight: 400;"><a id="auto11"></a><strong>Step 11.</strong> At this point, one may try <a href="http://bids-standard.github.io/bids-validator/">validating</a>. However, one will receive the <a href="../bids-tutorial-series-part-1a/index.html#man14">same error message</a> from part A regarding defining TaskName in the <a href="http://bids.neuroimaging.io/bids_spec1.0.2.pdf#page=14">task json files</a>. The slice timing for multiband imaging was corrected in the version of dcm2niix implemented in the script. </span><br />
+<a href="../wp-content/uploads/2018/02/Script_error-message-script_taskname.png"><img loading="lazy" decoding="async" class="wp-image-439 aligncenter" src="../wp-content/uploads/2018/02/Script_error-message-script_taskname.png" alt="Script_error message script_taskname" width="453" height="124" /></a><br />
+<span style="font-weight: 400;">To correct this error, we will confirm that each task json file has the required fields: RepetitionTime, VolumeTiming or SliceTiming, and TaskName. This code snippet will evaluate if RepetitionTime exists, if SliceTiming (or VolumeTiming) exist and the timings are all less than the RepetitionTime, and if TaskName is defined. In addition, if TaskName is not defined, TaskName will be added to the json file with TaskName being the task label in the filename.</span></p>
+<div style="background: #ffffff; overflow: auto; width: auto; border: solid gray; border-width: .1em .1em .1em .8em; padding: .2em .6em;">
+<pre style="margin: 0; line-height: 125%;"><span style="color: #9f9e9e; font-style: italic;">###Check func json for required fields
+#Required fields for func: 'RepetitionTime','VolumeTiming' or 'SliceTiming', and 'TaskName'
+#capture all jsons to test</span>
+for sessnum in ses-1 ses-2; do
+cd ${niidir}/sub-${subj}/${sessnum}/func <span style="color: #9f9e9e; font-style: italic;">#Go into the func folder</span>
+for funcjson in $(ls *.json); do 
+
+<span style="color: #9f9e9e; font-style: italic;">#Repeition Time exist?</span>
+repeatexist=$(cat ${funcjson} | jq '.RepetitionTime')
+if [[ ${repeatexist} == "null" ]]; then   
+	echo "${funcjson} doesn't have RepetitionTime defined"
+else
+echo "${funcjson} has RepetitionTime defined"
+fi
+
+<span style="color: #9f9e9e; font-style: italic;">#VolumeTiming or SliceTiming exist?
+#Constraint SliceTiming can't be great than TR</span>
+volexist=$(cat ${funcjson} | jq '.VolumeTiming')
+sliceexist=$(cat ${funcjson} | jq '.SliceTiming')
+if [[ ${volexist} == "null" &amp;&amp; ${sliceexist} == "null" ]]; then
+echo "${funcjson} doesn't have VolumeTiming or SliceTiming defined"
+else
+if [[ ${volexist} == "null" ]]; then
+echo "${funcjson} has SliceTiming defined"
+<span style="color: #9f9e9e; font-style: italic;">#Check SliceTiming is less than TR</span>
+sliceTR=$(cat ${funcjson} | jq '.SliceTiming[] | select(.&gt;="$repeatexist")')
+if [ -z ${sliceTR} ]; then
+echo "All SliceTiming is less than TR" <span style="color: #9f9e9e; font-style: italic;">#The slice timing was corrected in the newer dcm2niix version called through command line</span>
+else
+echo "SliceTiming error"
+fi
+else
+echo "${funcjson} has VolumeTiming defined"
+fi
+fi
+
+<span style="color: #9f9e9e; font-style: italic;">#Does TaskName exist?</span>
+taskexist=$(cat ${funcjson} | jq '.TaskName')
+if [ "$taskexist" == "null" ]; then
+jsonname="${funcjson%.*}"
+taskfield=$(echo $jsonname | cut -d '_' -f2 | cut -d '-' -f2)
+jq '. |= . + {"TaskName":"'${taskfield}'"}' ${funcjson} &gt; tasknameadd.json
+rm ${funcjson}
+mv tasknameadd.json ${funcjson}
+echo "TaskName was added to ${jsonname} and matches the tasklabel in the filename"
+else
+Taskquotevalue=$(jq '.TaskName' ${funcjson})
+Taskvalue=$(echo $Taskquotevalue | cut -d '"' -f2)	
+jsonname="${funcjson%.*}"
+taskfield=$(echo $jsonname | cut -d '_' -f2 | cut -d '-' -f2)
+if [ $Taskvalue == $taskfield ]; then
+echo "TaskName is present and matches the tasklabel in the filename"
+else
+echo "TaskName and tasklabel do not match"
+fi
+fi
+
+done
+done
+</pre>
+</div>
+<p><span style="font-weight: 400;"><a id="auto12"></a><strong>Step 12.</strong> Now if we try to <a href="http://bids-standard.github.io/bids-validator/">validate</a>, we find that this dataset is a valid BIDS dataset! To capture both subjects, one can change the subj for loop at the top of the script to replace participant 3893245 for 2475376 in the loop. After running participant 3893245 through the workflow, we find the <a href="../bids-tutorial-series-part-1a/index.html#man15">same warnings</a> as the part A curated dataset; the checkerboard scans across subjects have different time dimensions and the dwi may be missing scans because there is only 1 diffusion scan for participant 3893245 and 2 diffusion scans for participant 2475376. </span><span style="font-weight: 400;">Note: Do not have both participants in the for loop if one has already been run and organized, this will cause an error.</span></p>
+<p><span style="font-weight: 400;">This first tutorial part illustrated how to convert DICOMs from the NKI Test-Retest dataset to a validated BIDS dataset. We illustrated doing it <a href="../bids-tutorial-series-part-1a/index.html">A. manually</a> and B. an automated custom solution. The next tutorial will show how to complete this conversation using an off-the-shelf BIDS converter: HeuDiconv.</span></p>
+</div>
+
+</div>
+
+<div class="post-share">
+<div class="md-social-share-classic"><div class="item share-fb"><div class="fb-like" data-href="http://reproducibility.stanford.edu/bids-tutorial-series-part-1b/" data-width="450" data-layout="button_count" data-show-faces="false" data-send="false"></div></div><div class="item"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://reproducibility.stanford.edu/bids-tutorial-series-part-1b/">Tweet</a></div><div class="item"><div class="g-plusone" data-size="medium" data-action="share" data-annotation="bubble"></div></div><div class="item"><a class="pinterest-share" href="https://www.pinterest.com/pin/create/button/?url=http://reproducibility.stanford.edu/bids-tutorial-series-part-1b/&amp;media=&amp;description=BIDS&#32;Tutorial&#32;Series:&#32;Automate&#32;the&#32;Introductory&#32;Walkthrough" data-pin-do="buttonPin" data-pin-config="beside"><img src="https://assets.pinterest.com/images/pidgets/pin_it_button.png" /></a></div></div></div>
+
+
+<div id="comments">
+
+            <h4 class="comment-title">6 Comments</h4>
+    
+            <ol class="commentlist">
+                    <li class="comment byuser comment-author-franklin bypostauthor even thread-even depth-1" id="li-comment-585">
+            <div id="comment-585" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="../index.html@p=529.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">7 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Thank you for your question. To distinguish your MOCO file you may add to the filename the &#8220;rec&#8221; label. This rec label would be placed after task and acq (acq is optional). This can be found described here: <a href="http://bids.neuroimaging.io/bids_spec1.1.0.pdf#page=22" rel="nofollow ugc">http://bids.neuroimaging.io/bids_spec1.1.0.pdf#page=22</a></p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-673">
+            <div id="comment-673" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="../index.html@p=529.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">7 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Thank you for your question. To confirm, were you able to download and install the jo package successfully? The jo package can found here: <a href="https://github.com/jpmens/jo" rel="nofollow ugc">https://github.com/jpmens/jo</a> .</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-2939">
+            <div id="comment-2939" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="../index.html@p=529.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author"><a href="index.html#auto1" class="url" rel="ugc">Rachel</a></span> <span class="comment-date">7 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi, I have a question about pathway in this script:</p>
+<p>####Defining pathways<br />
+toplvl=/Users/franklinfeingold/Desktop/NKI_script<br />
+dcmdir=/Users/franklinfeingold/Desktop/NKI_script/Dicom<br />
+dcm2niidir=/Users/franklinfeingold/Desktop/dcm2niix_3-Jan-2018_mac<br />
+#Create nifti directory<br />
+mkdir ${toplvl}/Nifti<br />
+niidir=${toplvl}/Nifti</p>
+<p>####Anatomical Organization####<br />
+for subj in 2475376; do<br />
+	echo &#8220;Processing subject $subj&#8221;</p>
+<p>###Create structure<br />
+mkdir -p ${niidir}/sub-${subj}/ses-1/anat</p>
+<p>###Convert dcm to nii<br />
+#Only convert the Dicom folder anat<br />
+for direcs in anat; do<br />
+${dcm2niidir}/dcm2niix -o ${niidir}/sub-${subj} -f ${subj}_%f_%p ${dcmdir}/${subj}/${direcs}<br />
+done</p>
+<p>From my understanding dcmdir is a Dicom folder with sub folders for every subject. So I have a folder named Dicom on my computer with sub folders for each subject. Then a new folder on the Dicom level is created for new Nifti files. And subject 2475376 is a subfolder of Dicom with dicom files inside. With this set up the script is not running properly. The Nifty folder is being created with the structure but I am getting a message saying no dicoms are found for converting. Can you please explain how my folders should be set up? Where subjects should be placed etc.?</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-3083">
+            <div id="comment-3083" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="../index.html@p=529.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">7 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi Rachel,<br />
+Thank you for your question. To confirm, your dicom file structure should look like Dicom/2475376/anat/*.dcm . It may appear that the anat folder is missing.<br />
+The dicom file structure is shown in part 1A of this tutorial series: <a href="../bids-tutorial-series-part-1a/index.html" rel="ugc">http://reproducibility.stanford.edu/bids-tutorial-series-part-1a/</a>. For example, at step 5 I showed the file structure for the anatomical scan. The script is going into each scan sequence dicom directory. This is being done in the last section of the code you posted under the &#8220;#Only convert the Dicom folder anat&#8221; comment. The for loop is running through the anat folder to only convert the anatomical scan.</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment even thread-even depth-1" id="li-comment-4287">
+            <div id="comment-4287" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="../index.html@p=529.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Paulina</span> <span class="comment-date">6 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi Franklin,</p>
+<p>I  have no access to original dicom files, only nifti, .par, and .rec files. Is it possible to convert my files to BIDS format (automated way preferably) at this point? If it&#8217;s possible, what would be the way to go about this?</p>
+<p>Thanks!<br />
+Paulina</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+        <li class="comment byuser comment-author-franklin bypostauthor odd alt thread-odd thread-alt depth-1" id="li-comment-4302">
+            <div id="comment-4302" class="comment-section">              
+                <div class="comment-side">
+                    <div class="comment-avatar"><a href="../index.html@p=529.html" target="_blank"></a></div>
+                </div>
+            
+                <div class="comment-cont">                                        
+                    <div class="comment-meta">
+                        <span class="comment-author">Franklin Feingold</span> <span class="comment-date">6 years</span>                        <span class="comment-reply"></span>
+                        <span class="comment-edit"></span>
+                    </div>
+                                        
+                    <div class="comment-body">
+                        <p>Hi Paulina, </p>
+<p>Thank you for your question! It is possible to convert your files to the BIDS format from the nifti files. (for the .par and .rec files they may be converted to nifti as well. I found this question that may explain how to do that &#8211; <a href="https://www.nitrc.org/forum/message.php?msg_id=11974" rel="nofollow ugc">https://www.nitrc.org/forum/message.php?msg_id=11974</a>). Once you have the nifti this tutorial shows how to rename and structure those niftis to follow the BIDS format. For example in anatomicals this would be following step 3 and 4. This may require writing a script that changes your current naming and structure to BIDS. Step 3 and 4 provide one way this may be done. </p>
+<p>Thank you,<br />
+Franklin</p>
+                    </div>
+                </div>
+            </div>
+    </li><!-- #comment-## -->
+            </ol>
+                
+                <p class="nocomments">Comments are closed.</p>
+                
+    
+        
+
+</div>
+	</article>
+</div></div><div class="col-md-3 col-md-right col-sm-right"><aside class="blog-widget-area widget-area">       
+	<div id="search-2" class="widget widget_search"><div class="widget_search">
+	<form method="get" id="searchform" action="../index.html">
+		<fieldset>
+			<input id="s" type="text" name="s" value="" placeholder="To search type and hit enter..." />
+			<input id="searchsubmit" type="submit" />
+	    </fieldset>
+	</form>
+</div></div><div id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href='../2021/12/index.html'>December 2021</a></li>
+	<li><a href='../2021/08/index.html'>August 2021</a></li>
+	<li><a href='../2021/03/index.html'>March 2021</a></li>
+	<li><a href='../2020/10/index.html'>October 2020</a></li>
+	<li><a href='../2020/09/index.html'>September 2020</a></li>
+	<li><a href='../2020/08/index.html'>August 2020</a></li>
+	<li><a href='../2020/03/index.html'>March 2020</a></li>
+	<li><a href='../2020/02/index.html'>February 2020</a></li>
+	<li><a href='../2020/01/index.html'>January 2020</a></li>
+	<li><a href='../2019/10/index.html'>October 2019</a></li>
+	<li><a href='../2019/09/index.html'>September 2019</a></li>
+	<li><a href='../2019/06/index.html'>June 2019</a></li>
+	<li><a href='../2019/05/index.html'>May 2019</a></li>
+	<li><a href='../2019/04/index.html'>April 2019</a></li>
+	<li><a href='../2019/03/index.html'>March 2019</a></li>
+	<li><a href='../2019/02/index.html'>February 2019</a></li>
+	<li><a href='../2019/01/index.html'>January 2019</a></li>
+	<li><a href='../2018/10/index.html'>October 2018</a></li>
+	<li><a href='../2018/09/index.html'>September 2018</a></li>
+	<li><a href='../2018/08/index.html'>August 2018</a></li>
+	<li><a href='../2018/06/index.html'>June 2018</a></li>
+	<li><a href='../2018/05/index.html'>May 2018</a></li>
+	<li><a href='../2018/02/index.html'>February 2018</a></li>
+	<li><a href='../2017/11/index.html'>November 2017</a></li>
+	<li><a href='../2017/10/index.html'>October 2017</a></li>
+	<li><a href='../2017/06/index.html'>June 2017</a></li>
+	<li><a href='../2017/04/index.html'>April 2017</a></li>
+	<li><a href='../2017/01/index.html'>January 2017</a></li>
+	<li><a href='../2016/08/index.html'>August 2016</a></li>
+	<li><a href='../2016/04/index.html'>April 2016</a></li>
+	<li><a href='../2015/12/index.html'>December 2015</a></li>
+	<li><a href='../2015/08/index.html'>August 2015</a></li>
+	<li><a href='../2015/07/index.html'>July 2015</a></li>
+	<li><a href='../2015/06/index.html'>June 2015</a></li>
+			</ul>
+
+			</div>	</aside></div></div>		</div>
+	</div>
+	
+
+<footer>
+	<div class="container">
+		<div class="row">
+
+			
+						<div class="col-md-4 column">
+													<div id="text-3" class="widget widget_text"><h3 class="widget-title">Affiliates</h3>			<div class="textwidget"><h4><a  href=" https://poldracklab.stanford.edu" target="_blank">poldracklab@stanford</a></h4>
+<br />
+<h4><a  href=" https://post.stanford.edu/" target="_blank">Stanford PoST</a></h4>
+<br />
+<h4><a  href=" http://squishymedia.com" target="_blank">Squishymedia</a></h4></div>
+		</div>												</div>
+
+						<div class="col-md-4 column">
+													<div id="text-4" class="widget widget_text"><h3 class="widget-title">Support for CRN provided by</h3>			<div class="textwidget"><a href="http://www.arnoldfoundation.org/" target="_blank" ><img  style="  width: 190px;
+  margin: 10px 0;
+  height: auto;
+  display: block;"
+src="../wp-content/uploads/2015/06/ljaf-logo1.png" /></a>
+<br />
+<a href="http://www.nsf.gov/"  target="_blank"><img  style="  width: 200px;
+  margin: 10px 0;
+  height: auto;
+  display: block;" src="../wp-content/uploads/2015/06/nsf_logo.png" /></a>
+<br />
+<a href="http://www.drugabuse.gov/"  target="_blank"><img  style="  width: 190px;
+  margin: 10px 0;
+  height: auto;
+  display: block;" src="../wp-content/uploads/2015/06/nida-logo.png" /></a></div>
+		</div>												</div>
+
+						<div class="col-md-4 column">
+													
+		<div id="recent-posts-3" class="widget widget_recent_entries">
+		<h3 class="widget-title">Recent Blog Posts</h3>
+		<ul>
+											<li>
+					<a href="../index.html@p=1192.html">The most open and sharing labs on OpenNeuro (March 2021 &#8211; August 2021)</a>
+											<span class="post-date">December 16, 2021</span>
+									</li>
+											<li>
+					<a href="../index.html@p=1181.html">Slice timing correction in fMRIprep and linear modeling</a>
+											<span class="post-date">August 24, 2021</span>
+									</li>
+											<li>
+					<a href="../index.html@p=1159.html">The most open and sharing labs on OpenNeuro (September 2020 &#8211; February 2021)</a>
+											<span class="post-date">March 29, 2021</span>
+									</li>
+											<li>
+					<a href="../index.html@p=1144.html">Copy-pasting your methods section is good, actually.</a>
+											<span class="post-date">October 28, 2020</span>
+									</li>
+											<li>
+					<a href="../index.html@p=1097.html">fMRIPrep: Versioning and Long-Term Support</a>
+											<span class="post-date">September 28, 2020</span>
+									</li>
+					</ul>
+
+		</div>												</div>
+						</div>
+	</div>	
+</footer>
+
+
+<div id="copyright">
+	<div class="container">
+		<div class="copyright-text">© Stanford CRN </div>
+		<div class="float-right">
+				</div>
+	</div>
+</div>
+
+</div>
+<!-- end wrap -->
+
+
+<a href="../index.html@p=529.html#" id="md-back-top"></a><script type="text/javascript">                                    </script><script type="text/javascript">                                    </script>
+
+
+<script type="text/javascript" src="../wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js@ver=3.51.0-2014.06.20" id="jquery-form-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"https:\/\/reproducibility.stanford.edu\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","recaptchaEmpty":"Please verify that you are not a robot.","sending":"Sending ...","cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../wp-content/plugins/contact-form-7/includes/js/scripts.js@ver=4.4.2" id="contact-form-7-js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false" id="google-maps-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.easing.js@ver=1.3.0" id="jquery-easing-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.isotope.js@ver=1.5.25" id="isotope-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/owl-carousel/owl.carousel.min.js@ver=1.27" id="owl-carousel-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.flexslider-min.js@ver=2.2.2" id="jquery-flexslider-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/fancybox/jquery.fancybox.pack.js@ver=2.1.5" id="jquery-fancybox-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/fancybox/helpers/jquery.fancybox-media.js@ver=1.0.6" id="jquery-fancybox-media-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.fitvids.js@ver=1.0.3" id="jquery-fitvids-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/mediaelement/mediaelement-and-player.min.js@ver=2.14.2" id="md-mediaelement-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.countTo.js@ver=1.0" id="jquery-countTo-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.viewport.js@ver=1.0" id="jquery-viewport-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.easypiechart.js@ver=1.2.5" id="jquery-easypiechart-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/framework/md-page-builder/lib/md-shortcodes/assets/js/libs/jquery.simple-text-rotator.min.js@ver=1.0" id="jquery-simple-text-rotator-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/assets/js/vendor/bootstrap.js" id="flex-bootstrap-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/assets/js/vendor/plugins.js" id="flex-plugins-js"></script>
+<script type="text/javascript" src="../wp-content/themes/flex/assets/js/theme.js" id="flex-js"></script>
+
+</body>
+</html>
+<!-- Dynamic page generated in 0.343 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2025-04-21 18:01:32 -->
+
+<!-- super cache -->

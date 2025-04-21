@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	>
+<channel>
+	<title>
+	Comments on: BIDS Tutorial Series: Automate the Introductory Walkthrough	</title>
+	<atom:link href="https://reproducibility.stanford.edu/bids-tutorial-series-part-1b/feed/" rel="self" type="application/rss+xml" />
+	<link>https://reproducibility.stanford.edu/bids-tutorial-series-part-1b/?utm_source=rss&#038;utm_medium=rss&#038;utm_campaign=bids-tutorial-series-part-1b</link>
+	<description></description>
+	<lastBuildDate>Thu, 24 Oct 2019 01:40:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.7.1</generator>
+	<item>
+		<title>
+		By: Franklin Feingold		</title>
+		<link>https://reproducibility.stanford.edu/bids-tutorial-series-part-1b/#comment-4302</link>
+
+		<dc:creator><![CDATA[Franklin Feingold]]></dc:creator>
+		<pubDate>Sat, 17 Nov 2018 00:46:46 +0000</pubDate>
+		<guid isPermaLink="false">http://reproducibility.stanford.edu/?p=529#comment-4302</guid>
+
+					<description><![CDATA[Hi Paulina, 
+
+Thank you for your question! It is possible to convert your files to the BIDS format from the nifti files. (for the .par and .rec files they may be converted to nifti as well. I found this question that may explain how to do that - https://www.nitrc.org/forum/message.php?msg_id=11974). Once you have the nifti this tutorial shows how to rename and structure those niftis to follow the BIDS format. For example in anatomicals this would be following step 3 and 4. This may require writing a script that changes your current naming and structure to BIDS. Step 3 and 4 provide one way this may be done. 
+
+Thank you,
+Franklin]]></description>
+			<content:encoded><![CDATA[<p>Hi Paulina, </p>
+<p>Thank you for your question! It is possible to convert your files to the BIDS format from the nifti files. (for the .par and .rec files they may be converted to nifti as well. I found this question that may explain how to do that &#8211; <a href="https://www.nitrc.org/forum/message.php?msg_id=11974" rel="nofollow ugc">https://www.nitrc.org/forum/message.php?msg_id=11974</a>). Once you have the nifti this tutorial shows how to rename and structure those niftis to follow the BIDS format. For example in anatomicals this would be following step 3 and 4. This may require writing a script that changes your current naming and structure to BIDS. Step 3 and 4 provide one way this may be done. </p>
+<p>Thank you,<br />
+Franklin</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Paulina		</title>
+		<link>https://reproducibility.stanford.edu/bids-tutorial-series-part-1b/#comment-4287</link>
+
+		<dc:creator><![CDATA[Paulina]]></dc:creator>
+		<pubDate>Thu, 15 Nov 2018 18:46:19 +0000</pubDate>
+		<guid isPermaLink="false">http://reproducibility.stanford.edu/?p=529#comment-4287</guid>
+
+					<description><![CDATA[Hi Franklin,
+
+I  have no access to original dicom files, only nifti, .par, and .rec files. Is it possible to convert my files to BIDS format (automated way preferably) at this point? If it&#039;s possible, what would be the way to go about this?
+
+Thanks!
+Paulina]]></description>
+			<content:encoded><![CDATA[<p>Hi Franklin,</p>
+<p>I  have no access to original dicom files, only nifti, .par, and .rec files. Is it possible to convert my files to BIDS format (automated way preferably) at this point? If it&#8217;s possible, what would be the way to go about this?</p>
+<p>Thanks!<br />
+Paulina</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Franklin Feingold		</title>
+		<link>https://reproducibility.stanford.edu/bids-tutorial-series-part-1b/#comment-3083</link>
+
+		<dc:creator><![CDATA[Franklin Feingold]]></dc:creator>
+		<pubDate>Mon, 17 Sep 2018 18:09:33 +0000</pubDate>
+		<guid isPermaLink="false">http://reproducibility.stanford.edu/?p=529#comment-3083</guid>
+
+					<description><![CDATA[Hi Rachel, 
+Thank you for your question. To confirm, your dicom file structure should look like Dicom/2475376/anat/*.dcm . It may appear that the anat folder is missing.
+The dicom file structure is shown in part 1A of this tutorial series: http://reproducibility.stanford.edu/bids-tutorial-series-part-1a/. For example, at step 5 I showed the file structure for the anatomical scan. The script is going into each scan sequence dicom directory. This is being done in the last section of the code you posted under the &quot;#Only convert the Dicom folder anat&quot; comment. The for loop is running through the anat folder to only convert the anatomical scan.]]></description>
+			<content:encoded><![CDATA[<p>Hi Rachel,<br />
+Thank you for your question. To confirm, your dicom file structure should look like Dicom/2475376/anat/*.dcm . It may appear that the anat folder is missing.<br />
+The dicom file structure is shown in part 1A of this tutorial series: <a href="http://reproducibility.stanford.edu/bids-tutorial-series-part-1a/" rel="ugc">http://reproducibility.stanford.edu/bids-tutorial-series-part-1a/</a>. For example, at step 5 I showed the file structure for the anatomical scan. The script is going into each scan sequence dicom directory. This is being done in the last section of the code you posted under the &#8220;#Only convert the Dicom folder anat&#8221; comment. The for loop is running through the anat folder to only convert the anatomical scan.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rachel		</title>
+		<link>https://reproducibility.stanford.edu/bids-tutorial-series-part-1b/#comment-2939</link>
+
+		<dc:creator><![CDATA[Rachel]]></dc:creator>
+		<pubDate>Tue, 28 Aug 2018 14:32:36 +0000</pubDate>
+		<guid isPermaLink="false">http://reproducibility.stanford.edu/?p=529#comment-2939</guid>
+
+					<description><![CDATA[Hi, I have a question about pathway in this script:
+
+####Defining pathways
+toplvl=/Users/franklinfeingold/Desktop/NKI_script
+dcmdir=/Users/franklinfeingold/Desktop/NKI_script/Dicom
+dcm2niidir=/Users/franklinfeingold/Desktop/dcm2niix_3-Jan-2018_mac
+#Create nifti directory
+mkdir ${toplvl}/Nifti
+niidir=${toplvl}/Nifti
+
+####Anatomical Organization####
+for subj in 2475376; do
+	echo &quot;Processing subject $subj&quot;
+
+###Create structure
+mkdir -p ${niidir}/sub-${subj}/ses-1/anat
+
+###Convert dcm to nii
+#Only convert the Dicom folder anat
+for direcs in anat; do
+${dcm2niidir}/dcm2niix -o ${niidir}/sub-${subj} -f ${subj}_%f_%p ${dcmdir}/${subj}/${direcs}
+done
+
+From my understanding dcmdir is a Dicom folder with sub folders for every subject. So I have a folder named Dicom on my computer with sub folders for each subject. Then a new folder on the Dicom level is created for new Nifti files. And subject 2475376 is a subfolder of Dicom with dicom files inside. With this set up the script is not running properly. The Nifty folder is being created with the structure but I am getting a message saying no dicoms are found for converting. Can you please explain how my folders should be set up? Where subjects should be placed etc.?]]></description>
+			<content:encoded><![CDATA[<p>Hi, I have a question about pathway in this script:</p>
+<p>####Defining pathways<br />
+toplvl=/Users/franklinfeingold/Desktop/NKI_script<br />
+dcmdir=/Users/franklinfeingold/Desktop/NKI_script/Dicom<br />
+dcm2niidir=/Users/franklinfeingold/Desktop/dcm2niix_3-Jan-2018_mac<br />
+#Create nifti directory<br />
+mkdir ${toplvl}/Nifti<br />
+niidir=${toplvl}/Nifti</p>
+<p>####Anatomical Organization####<br />
+for subj in 2475376; do<br />
+	echo &#8220;Processing subject $subj&#8221;</p>
+<p>###Create structure<br />
+mkdir -p ${niidir}/sub-${subj}/ses-1/anat</p>
+<p>###Convert dcm to nii<br />
+#Only convert the Dicom folder anat<br />
+for direcs in anat; do<br />
+${dcm2niidir}/dcm2niix -o ${niidir}/sub-${subj} -f ${subj}_%f_%p ${dcmdir}/${subj}/${direcs}<br />
+done</p>
+<p>From my understanding dcmdir is a Dicom folder with sub folders for every subject. So I have a folder named Dicom on my computer with sub folders for each subject. Then a new folder on the Dicom level is created for new Nifti files. And subject 2475376 is a subfolder of Dicom with dicom files inside. With this set up the script is not running properly. The Nifty folder is being created with the structure but I am getting a message saying no dicoms are found for converting. Can you please explain how my folders should be set up? Where subjects should be placed etc.?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Franklin Feingold		</title>
+		<link>https://reproducibility.stanford.edu/bids-tutorial-series-part-1b/#comment-673</link>
+
+		<dc:creator><![CDATA[Franklin Feingold]]></dc:creator>
+		<pubDate>Wed, 30 May 2018 18:04:58 +0000</pubDate>
+		<guid isPermaLink="false">http://reproducibility.stanford.edu/?p=529#comment-673</guid>
+
+					<description><![CDATA[Thank you for your question. To confirm, were you able to download and install the jo package successfully? The jo package can found here: https://github.com/jpmens/jo .]]></description>
+			<content:encoded><![CDATA[<p>Thank you for your question. To confirm, were you able to download and install the jo package successfully? The jo package can found here: <a href="https://github.com/jpmens/jo" rel="nofollow ugc">https://github.com/jpmens/jo</a> .</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Franklin Feingold		</title>
+		<link>https://reproducibility.stanford.edu/bids-tutorial-series-part-1b/#comment-585</link>
+
+		<dc:creator><![CDATA[Franklin Feingold]]></dc:creator>
+		<pubDate>Tue, 15 May 2018 17:49:47 +0000</pubDate>
+		<guid isPermaLink="false">http://reproducibility.stanford.edu/?p=529#comment-585</guid>
+
+					<description><![CDATA[Thank you for your question. To distinguish your MOCO file you may add to the filename the &quot;rec&quot; label. This rec label would be placed after task and acq (acq is optional). This can be found described here: http://bids.neuroimaging.io/bids_spec1.1.0.pdf#page=22]]></description>
+			<content:encoded><![CDATA[<p>Thank you for your question. To distinguish your MOCO file you may add to the filename the &#8220;rec&#8221; label. This rec label would be placed after task and acq (acq is optional). This can be found described here: <a href="http://bids.neuroimaging.io/bids_spec1.1.0.pdf#page=22" rel="nofollow ugc">http://bids.neuroimaging.io/bids_spec1.1.0.pdf#page=22</a></p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>
