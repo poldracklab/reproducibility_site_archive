@@ -1,4 +1,4 @@
-Static archive of the center for reproducible neuroscience website.
+Static archive of the center for reproducible neuroscience website reproducibility.stanford.edu.
 
 Produced with the following wget and bash one liner:
 
